@@ -13,5 +13,9 @@
     "YOGA"
   ],
   "author": "Ganesh,Teja,Sanjay",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "body": "^5.1.0",
+    "react": "^18.2.0"
+  }
 }
