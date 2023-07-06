@@ -1,5 +1,41 @@
-.main{
-    background-color: black;
-    min-height: 30vh;
-    width: 100%;
-}
+.flash {
+    background-color:rgb(176, 99, 99);
+    height: 8vh;
+    position: relative;
+    overflow: hidden;
+    }
+    .flashbox {
+    display:flex;
+    }
+    .flashtext {
+    color:red;
+    position: absolute;
+    top:20%;
+    left:6%;
+    font-size: larger;
+    width:100% fit-content;
+    }
+    .flas {
+    left:0 auto;
+    color:blue;
+    top: 20%;
+    left: 16%;
+    width: 50%;
+    font-size: large;
+    position:absolute;
+    }
+    .bone {
+        border:1px;
+        height:6vh;
+        background-color:rgb(40, 103, 221);
+        display: flex;
+        justify-content: space-between;   
+    }
+    .bone-item{
+        text-decoration:  none;
+        padding: 1%;
+        background-color: white;
+    }
+    .bone-item:hover{
+        background-color: red;
+    }

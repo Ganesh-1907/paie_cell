@@ -1,9 +1,10 @@
 import React from "react";
+import Header from "../header/header";
 function Home(){
     return(
         <>
         <div className="main">
-            <h1>PAIE CELL</h1>
+            <Header/>
         </div>
         
         </>
