@@ -2,7 +2,10 @@ import React from "react";
 function Home(){
     return(
         <>
-        <h1>PAIE CELL</h1>
+        <div className="main">
+            <h1>PAIE CELL</h1>
+        </div>
+        
         </>
     )
 }
