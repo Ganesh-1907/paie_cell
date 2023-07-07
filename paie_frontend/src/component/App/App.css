@@ -1,13 +1,13 @@
 .flash {
-    background-color:rgb(176, 99, 99);
-    height: 8vh;
+    background-color: white;
+    height: 7vh;
     position: relative;
     overflow: hidden;
     }
-    .flashbox {
+.flashbox {
     display:flex;
     }
-    .flashtext {
+.flashtext {
     color:red;
     position: absolute;
     top:20%;
@@ -15,7 +15,7 @@
     font-size: larger;
     width:100% fit-content;
     }
-    .flas {
+.flas {
     left:0 auto;
     color:blue;
     top: 20%;
@@ -24,18 +24,77 @@
     font-size: large;
     position:absolute;
     }
-    .bone {
+.bone1 {
         border:1px;
-        height:6vh;
-        background-color:rgb(40, 103, 221);
-        display: flex;
-        justify-content: space-between;   
+        height:5vh;
+        background-color: rgb(40, 103, 221); 
     }
-    .bone-item{
-        text-decoration:  none;
-        padding: 1%;
-        background-color: white;
-    }
-    .bone-item:hover{
-        background-color: red;
-    }
+.title-box{
+    margin: 10px 20px  0px 0px;
+    font-size: 35px;
+    font-size: calc(23px + 4vmin);
+    color: green;
+    font-style: inherit;
+    display: flex;
+    justify-content:space-evenly;
+}
+.logo{
+    margin: 5px 0px  0px 10px;
+}
+.bone2{
+    border: 1px;
+    height: 12vh;
+    display: flex;
+    background-color: rgb(235, 74, 30);
+}
+.bone2-left{
+    border: 1px;
+    height: 10vh;
+    margin: 7px 0px 0px 7px;
+    background-color: white;
+    width: 30%;
+}
+.bone2-right{
+    border: 1px;
+    height: 12vh;
+    background-color: cornflowerblue;
+    width: 75%;
+    display: flex;
+    justify-content: space-evenly;
+    text-decoration: none;
+    font-size: larger;
+}
+.bone3{
+    border:1px;
+    height:5vh;
+    background-color: rgb(40, 103, 221);
+}
+.marquee {
+    width: 100%;
+    white-space: nowrap;
+    overflow-x: hidden;
+    animation: marquee 2s linear forwards;
+  }
+  @keyframes marquee {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(0%); }
+  }
+.bone2-right-menu{
+    margin-top: 30px;
+    margin-bottom: 25px;
+    padding: 0.5%;
+    text-decoration: none;
+    color:white;
+    color: rgb(250, 250, 22);
+
+}
+.bone2-right-menu:hover{
+    background-color:blue;
+    border-radius: 5px;
+} 
+.title{
+    height: 10vh;
+    background-color: rgb(139, 194, 139);
+    font-size: calc(13px + 3vmin);
+    
+}
