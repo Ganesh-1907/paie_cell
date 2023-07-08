@@ -1,6 +1,6 @@
 .flash {
     background-color: white;
-    height: 7vh;
+    height: 8vh;
     position: relative;
     overflow: hidden;
     }
@@ -24,10 +24,13 @@
     font-size: large;
     position:absolute;
     }
+.clg-logo{
+    margin: 0px 0px 0px 1250px;
+}
 .bone1 {
         border:1px;
         height:5vh;
-        background-color: rgb(40, 103, 221); 
+        background-color: #2063de; 
     }
 .title-box{
     margin: 10px 20px  0px 0px;
@@ -57,7 +60,7 @@
 .bone2-right{
     border: 1px;
     height: 12vh;
-    background-color: cornflowerblue;
+    background-color: rgb(89, 136, 224);
     width: 75%;
     display: flex;
     justify-content: space-evenly;
@@ -66,8 +69,8 @@
 }
 .bone3{
     border:1px;
-    height:5vh;
-    background-color: rgb(40, 103, 221);
+    height:1vh;
+    background-color: rgb(57, 118, 231);
 }
 .marquee {
     width: 100%;
@@ -93,8 +96,62 @@
     border-radius: 5px;
 } 
 .title{
-    height: 10vh;
-    background-color: rgb(139, 194, 139);
-    font-size: calc(13px + 3vmin);
-    
+    font-size: 31px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 10px 0px 0px 340px;
+    font-weight: bold;
+    color: rgb(15, 15, 163); 
+}
+.subtitle{
+    margin: -5px 0px 0px 460px;
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(235, 46, 46);
+    font-weight:bold;
+}
+.foundation{
+    color: red;
+    font-weight: bolder;
+    font-size: 17px;
+}
+.crousel-container{
+    height: 62vh;
+    background-color: rgb(57, 118, 231);
+    margin: 10px 0px 0px 0px;
+}
+.intro-container{
+    height: 80vh;
+    background-color: pink;
+    display: flex;
+    justify-content: space-evenly;
+}
+.intro-left{
+    width: 28%;
+    height: 80vh;
+    background-color: red;
+}
+.intro-middle{
+    width: 28%;
+    height: 80vh;
+    background-color: green;
+    display: flex;
+    justify-content: space-evenly;
+}
+.intro-right{
+    width: 28%;
+    height: 80vh;
+    background-color: blue;
+}
+.founder{
+    margin: 0px 0px 0px 240px;
+}
+.intro-mid-left{
+    width: 45%;
+    height: 40vh;
+    background-color: antiquewhite;
+}
+.intro-mid-right{
+    width: 45%;
+    height: 40vh;
+    background-color: rgb(204, 121, 19);
 }
