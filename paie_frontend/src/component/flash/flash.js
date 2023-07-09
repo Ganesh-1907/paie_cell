@@ -6,9 +6,9 @@ function Flash(){
         <div class="flash">
             <div class="flashbox">
                 <div class="flashtext"><b>FLASH NEWS::</b></div>
-                <div class="flas">
-                    
-                    <span>First Text is visible firest in the region of space</span>
+                <div class="marquee">
+
+                     <span>First Text is visible firest in the region of space</span>
                     <span>Second Text</span>
                     <span>Third Text</span>
 

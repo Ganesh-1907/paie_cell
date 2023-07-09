@@ -164,3 +164,59 @@
     height: 60vh;
     background-color: rgb(150, 150, 14);
 }
+
+
+
+.marquee {
+    width: 100%;
+    height: 50px;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .marquee span {
+    display: inline-block;
+    position: absolute;
+    opacity: 0;
+    white-space: nowrap;
+    animation: marquee 15s linear infinite;
+  }
+  
+  .marquee span:nth-child(1) {
+    animation-delay: 0s;
+  }
+  
+  .marquee span:nth-child(2) {
+    animation-delay: 5s;
+  }
+  
+  .marquee span:nth-child(3) {
+    animation-delay: 10s;
+  }
+  
+  @keyframes marquee {
+    0% {
+      opacity: 0;
+      transform: translateX(100%);
+    }
+    
+    5% {
+      opacity: 1;
+      transform: translateX(0%);
+    }
+    
+    20% {
+      opacity: 1;
+      transform: translateX(0%);
+    }
+    
+    25% {
+      opacity: 0;
+      transform: translateX(-100%);
+    }
+    
+    100% {
+      opacity: 0;
+      transform: translateX(-100%);
+    }
+  }
