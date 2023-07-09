@@ -129,25 +129,21 @@
     width: 28%;
     height: 80vh;
 }
+.intro-middle{
+    width: 28%;
+    height: 80vh;
+}
+.intro-right{
+    width: 28%;
+    height: 80vh;
+}
 .block-division{
     display: flex;
     justify-content: space-around;
 }
-.intro-middle{
-    width: 28%;
-    height: 80vh;
-    background-color: green;
-}
-
-.intro-right{
-    width: 28%;
-    height: 80vh;
-    background-color: blue;
-}
 .founder{
     margin: 0px 0px 0px 0px;
 }
-
 .intro-left-left{
     width: 40%;
     height: 31vh;
@@ -155,12 +151,16 @@
 .intro-left-right{
     width: 55%;
     height: 31vh;
-    background-color: green;
 }
 .intro-left-right h3{
     font-weight: bold;
+    color: red;
     margin: 0px 0px 0px 0px;
 }
 .intro-left-right p{
     margin: 7px 0px 0px 0px;
+}
+.event-container{
+    height: 60vh;
+    background-color: rgb(150, 150, 14);
 }
