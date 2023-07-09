@@ -15,15 +15,7 @@
     font-size: larger;
     width:100% fit-content;
     }
-.flas {
-    left:0 auto;
-    color:blue;
-    top: 20%;
-    left: 16%;
-    width: 50%;
-    font-size: large;
-    position:absolute;
-    }
+
 .clg-logo{
     margin: 0px 0px 0px 1250px;
 }
@@ -166,6 +158,15 @@
 }
 
 
+.flas {
+    left:0 auto;
+    color:blue;
+    top: 20%;
+    left: 16%;
+    width: 50%;
+    font-size: large;
+    position:absolute;
+    }
 
 .marquee {
     width: 100%;

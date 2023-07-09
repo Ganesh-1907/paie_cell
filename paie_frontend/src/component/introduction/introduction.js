@@ -58,8 +58,7 @@ function Introduction(){
                         <img className="founder" src={image2} height="220px" width="160px" />
                     </div>
                     <div className="intro-left-right">
-                        <h3>Jai Gurudev 
-                            !</h3>
+                        <h3>Jai Gurudev !</h3>
                         <p> The Art of Living Foundation is a volunteer-based, humanitarian and educational 
                             non-governmental organization (NGO).It was founded in 1981 by Ravi Shankar. 
                             The Art of Living Foundation has its centers in 180 countries.Art of Living Foundation 
