@@ -15,7 +15,15 @@
     font-size: larger;
     width:100% fit-content;
     }
-
+.flas {
+    left:0 auto;
+    color:blue;
+    top: 20%;
+    left: 16%;
+    width: 50%;
+    font-size: large;
+    position:absolute;
+    }
 .clg-logo{
     margin: 0px 0px 0px 1250px;
 }
@@ -156,68 +164,7 @@
     height: 60vh;
     background-color: rgb(150, 150, 14);
 }
-
-
-.flas {
-    left:0 auto;
-    color:blue;
-    top: 20%;
-    left: 16%;
-    width: 50%;
-    font-size: large;
-    position:absolute;
-    }
-
-.marquee {
-    width: 100%;
-    height: 50px;
-    overflow: hidden;
-    position: relative;
-  }
-  
-  .marquee span {
-    display: inline-block;
-    position: absolute;
-    opacity: 0;
-    white-space: nowrap;
-    animation: marquee 15s linear infinite;
-  }
-  
-  .marquee span:nth-child(1) {
-    animation-delay: 0s;
-  }
-  
-  .marquee span:nth-child(2) {
-    animation-delay: 5s;
-  }
-  
-  .marquee span:nth-child(3) {
-    animation-delay: 10s;
-  }
-  
-  @keyframes marquee {
-    0% {
-      opacity: 0;
-      transform: translateX(100%);
-    }
-    
-    5% {
-      opacity: 1;
-      transform: translateX(0%);
-    }
-    
-    20% {
-      opacity: 1;
-      transform: translateX(0%);
-    }
-    
-    25% {
-      opacity: 0;
-      transform: translateX(-100%);
-    }
-    
-    100% {
-      opacity: 0;
-      transform: translateX(-100%);
-    }
-  }
+.flash-mar{
+    display: inline-flex;
+    /* justify-content: space-between; */
+}

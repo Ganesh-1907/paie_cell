@@ -6,6 +6,19 @@ const app=express()
 app.use(express.json())
 app.use(cors())
 
+
+app.post('/flash-news/:flash',async(req,res)=>{
+    const details=await db.collection("flash-news").insertOne({
+        flash:req.params.flash
+    });
+    res.json(details)
+})
+
+app.get('/flash-news/',async(req,res)=>{
+    const details=await db.collection("flash-news").findOne({ })
+    res.json(details);
+})
+
 app.post('/admin-event/:date/:event',async(req,res)=>{
     const details=await db.collection("events-update").insertOne({
         date:req.params.date,
@@ -13,11 +26,6 @@ app.post('/admin-event/:date/:event',async(req,res)=>{
        });
     res.json(details)
 })
-
-// app.get('/event/',async(req,res)=>{
-//     const details =await db.collection("events-update").find({}).toArray()
-//     res.json(details);
-// })
 
 app.get('/events/',async(req,res)=>{
     const details=await db.collection("events-update").find({}).toArray()
