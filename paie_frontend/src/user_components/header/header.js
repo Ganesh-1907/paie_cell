@@ -10,7 +10,7 @@ function Header() {
                     <div className="bone2-left">
                         <div class="title-box">
                             <div className="logo"><img src={image1} width="65px" height="65px" /></div>
-                            <div > PAIE CELL</div>
+                            <div className="logo1"> PAIE CELL</div>
                         </div>
                     </div>
                     <div className="bone2-right">

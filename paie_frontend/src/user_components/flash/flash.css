@@ -1,0 +1,55 @@
+.flash {
+    background-color: white;
+    height: 9vh;
+    position: relative;
+    overflow: hidden;
+    }
+.flashbox {
+    display:flex;
+    }
+.flashtext {
+    color:red;
+    position: absolute;
+    top: 18%;
+    left:2%;
+    font-size: larger;
+    width:100% fit-content ;
+    }
+    .marquee {
+        width: 100%;
+        height: 50px;
+        overflow: hidden;
+        left:0 auto;
+        color:blue;
+        top: 20%;
+        left: 12%;
+        width: 100%;
+        font-size: large;
+        position:absolute;
+      }
+      .marquee span {
+        display: inline-block;
+        white-space: nowrap;
+        animation: marquee 10s linear infinite;
+      }
+      
+      @keyframes marquee {
+        0% {
+          transform: translateX(100%);
+        }
+        
+        25% {
+          transform: translateX(0);
+        }
+        
+        75% {
+          transform: translateX(0);
+        }
+        
+        100% {
+          transform: translateX(-100%);
+        }
+      }
+.clg-logo{
+    margin: 3px 0px 0px 1260px;
+}

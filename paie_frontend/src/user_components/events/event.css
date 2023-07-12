@@ -1,0 +1,15 @@
+.event-container{
+    display: inline-flex;
+    margin-top: 10px;
+}
+.event-date{
+    margin-left: 90px;
+    height: 100px;
+    width: 100px;
+    background-color: green;
+}
+.event-event{
+    width: 500px;
+    height: 100px;
+    background-color: green;
+}

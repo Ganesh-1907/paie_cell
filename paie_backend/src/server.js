@@ -15,13 +15,15 @@ app.post('/flash-news/:flash',async(req,res)=>{
 })
 
 app.get('/flash-news/',async(req,res)=>{
-    const details=await db.collection("flash-news").findOne({ })
+    const details=await db.collection("flash-news").find({}).sort({_id : -1}).limit(1).toArray()
     res.json(details);
 })
 
-app.post('/admin-event/:date/:event',async(req,res)=>{
+app.post('/admin-event/:day/:month/:year/:event',async(req,res)=>{
     const details=await db.collection("events-update").insertOne({
-        date:req.params.date,
+        day:req.params.day,
+        month : req.params.month,
+        year : req.params.year,
         event:req.params.event
        });
     res.json(details)

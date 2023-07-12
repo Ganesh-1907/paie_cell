@@ -1,0 +1,42 @@
+.intro-container{
+    height: 85vh;
+    background-color:whitesmoke;
+    display: flex;
+    justify-content: space-evenly;
+}
+.intro-left{
+    width: 28%;
+    height: 85vh;
+}
+.intro-middle{
+    width: 28%;
+    height: 80vh;
+}
+.intro-right{
+    width: 28%;
+    height: 80vh;
+}
+.block-division{
+    display: flex;
+    justify-content: space-around;
+}
+.founder{
+    margin: 0px 0px 0px 0px;
+}
+.intro-left-left{
+    width: 40%;
+    height: 31vh;
+}
+.intro-left-right{
+    width: 55%;
+    height: 31vh;
+    background-color: green;
+}
+.intro-left-right h5{
+    font-weight: bold;
+    color: red;
+    margin: 0px 0px 0px 0px;
+}
+.intro-left-right p{
+    margin: 7px 0px 0px 0px;
+}

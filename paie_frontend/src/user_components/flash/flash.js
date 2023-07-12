@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import image2 from '../../Assets/clg logo.png';
 
 const Flash= () => {
     const[flash,setflash]=useState([]);
@@ -20,9 +21,15 @@ const Flash= () => {
             flash.map((item)=>{
                 return(
                     <>
-                    <marquee >
-                    <h1>{item.flash}</h1>
-                    </marquee>
+                        <div class="flash">
+                            <div class="flashbox">
+                                <div class="flashtext"><b>FLASH NEWS::</b></div>
+                                <div class="marquee">
+                                    <span >{item.flash}</span>
+                                </div>
+                                <div className="clg-logo"><img src={image2} height="60px" width="200px" /></div>
+                            </div>
+                        </div>
                     </>
                 )
             })

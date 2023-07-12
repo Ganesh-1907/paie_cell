@@ -16,12 +16,23 @@ const Events= () => {
 
     return(
         <>
+        <h1>EVENTS</h1>
         {
             data.map((item)=>{
                 return(
                     <>
-                    <h1>{item.date}</h1>
-                    <h1>{item.event}</h1>
+                    <div className="event-container">
+                        <div className="event-date">
+                            <table>
+                                <th>{item.month}</th>
+                                <tr><h1>{item.day}</h1></tr>
+                            </table>
+                        </div>
+                        <div className="event-event">
+                            <h2>{item.event}</h2>
+                        </div>
+
+                    </div>
                     </>
                 )
             })
