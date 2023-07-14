@@ -1,8 +1,13 @@
 import React from "react";
+import Header from "../../header/header";
 function Aboutsrkr(){
     return(
         <>
-        <h1>ganesh</h1>
+        <Header/>
+        <div className="about-srkr-container">
+            <div></div>
+
+        </div>
         </>
 
     )
