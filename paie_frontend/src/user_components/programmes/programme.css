@@ -1,36 +1,27 @@
-.crousel-container{
-    height: 62vh;
-    background-color: rgb(57, 118, 231);
-    margin: 10px 0px 0px 0px;
-}
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
   }
   
-  .Carousel-c{
+  .Carousel-p{
     padding: 5rem;
     background-color:rgb(224, 224, 224);
     color: black;
-    height: 70vh;
+    height: 80vh;
     width: 98vw;
-
   }
-  .box-c{
-    background-color: white;
-    border: 5px solid red;
+  .box-p{
+    background-color: rgb(255, 255, 255);
+    border: 2px solid red;
     height: 400px;
-    margin: 0px 0px 0px 0px;
-    display: inline-flex;
+    margin: 50px 0px 0px 0px ;
   }
-  .box-c div{
-    display: inline-flex;
+  .box-p h2{
+      margin: 10px 0px 0px 15px ;
   }
-  
-  .box-c h3{
-    text-align: center;
-    display: inline-flex;
+  .box-p p{
+    margin: 15px 0px 0px 15px;
   }
   .slick-slide div{
     margin: 0 1rem;
@@ -38,7 +29,6 @@
   .slick-dots li.slick-active button:before {
     color: lightgreen !important;
   }
-  
   .slick-dots li button:before {
     color: #fff !important;
     font-size: 1rem !important;

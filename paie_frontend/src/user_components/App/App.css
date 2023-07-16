@@ -11,3 +11,9 @@
     border: 10px solid green;
 }
 
+.one{
+    min-height: 30vh;
+    overflow-y: hidden;
+}
+
+

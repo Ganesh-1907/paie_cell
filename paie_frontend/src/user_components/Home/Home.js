@@ -4,6 +4,8 @@ import Header from "../header/header";
 import Crousel from "../crousel/crousel";
 import Introduction from "../introduction/introduction";
 import Events from "../events/events";
+import Activity from "../activities/activities";
+import Programme from "../programmes/programme";
 function Home(){
     return(
         <>
@@ -14,7 +16,15 @@ function Home(){
             <br/>
             <Introduction/>
             <br/>
+            <br/>
+            <br/>
+            <Programme/>
             <Events/>
+            <br/>
+            <br/>
+            <br/>
+            <Activity/>
+            
         </div>
         
         </>

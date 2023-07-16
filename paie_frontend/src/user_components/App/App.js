@@ -6,6 +6,8 @@ import '../header/header.css';
 import '../crousel/crousel.css';
 import '../events/event.css';
 import '../introduction/introduction.css';
+import '../activities/activities.css';
+import '../../user_components/programmes/programme.css';
 import { BrowserRouter,Route,Routes } from 'react-router-dom';
 import Home from "../Home/Home";
 import Admin from '../../admin_components/admin/admin';
