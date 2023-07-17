@@ -2,7 +2,7 @@ import React from "react";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 import Slider from 'react-slick';
-import image1 from '../../Assets/paie.png';
+import image1 from '../../Assets/MUMN.png';
 function Crousel(){
     var settings = {
         dots: true,
@@ -43,8 +43,11 @@ function Crousel(){
             <div className='Carousel-c'>
             <Slider {...settings}>
             <div className='box-c'>
-                <div className="crousel-text"><h1>FIT INDIA CHALLENGE WINNER</h1></div>
-                <div className="crousel-image"><img src={image1} /> </div>
+              <div className="slider-container">
+              <div id="crousel-text"><h2>FIT INDIA CHALLENGE WINNER</h2></div>
+                <div id="crousel-image"><img src={image1} height="280px" width="700px" /> </div>
+              </div>
+                
             </div>
             <div className='box-c'>
                 <h3>ganesh</h3>

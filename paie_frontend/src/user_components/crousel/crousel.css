@@ -8,29 +8,22 @@
     margin: 0;
     box-sizing: border-box;
   }
-  
   .Carousel-c{
-    padding: 5rem;
+    padding: 3.5rem;
     background-color:rgb(224, 224, 224);
     color: black;
-    height: 70vh;
-    width: 98vw;
-
+    height: 67vh;
+    width: 98.8vw;
+    position: relative;
   }
   .box-c{
     background-color: white;
     border: 5px solid red;
-    height: 400px;
+    height: 360px;
     margin: 0px 0px 0px 0px;
-    display: inline-flex;
   }
-  .box-c div{
-    display: inline-flex;
-  }
-  
   .box-c h3{
     text-align: center;
-    display: inline-flex;
   }
   .slick-slide div{
     margin: 0 1rem;
@@ -38,10 +31,12 @@
   .slick-dots li.slick-active button:before {
     color: lightgreen !important;
   }
-  
   .slick-dots li button:before {
     color: #fff !important;
     font-size: 1rem !important;
     top: 2rem !important;
-  
+  }
+  .slider-container{
+    display: inline-flex;
+
   }
