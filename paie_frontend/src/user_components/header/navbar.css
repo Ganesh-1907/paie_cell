@@ -1,0 +1,51 @@
+.Navbar-container
+{
+  display: flex;
+  background-color: rgb(185, 204, 237);
+ 
+}
+.navbar {
+  background-color: rgb(89, 136, 224);
+  min-height: 4rem;
+  width: 100%;
+}
+.me-auto {
+  width: 100%;
+  justify-content: space-between;
+  display: flex;
+}
+
+.me-auto :hover {
+  background-color: rgb(34, 34, 218);
+  border-radius: 5px;
+}
+.navbar-toggler-right {
+  margin-left: auto !important;
+}
+.logo-content
+{
+  width: 30%;
+}
+.logo-content img
+{
+  height:5rem;
+  width: 100%;
+}
+@media only screen and (max-width:1000px) {
+  .logo-content
+  {
+   margin: auto; 
+   background-color:rgb(89, 136, 224);
+  }
+  .logo-content img
+   {
+  height:3rem;
+   }
+  .Navbar-container
+  {
+  display:block;
+  }
+  .navbar {
+      min-height: 3rem;
+    }
+}

@@ -1,14 +1,14 @@
 import React from "react";
 import image1 from '../../Assets/paie.png';
 import { Link } from "react-router-dom";
+import NavBar from "./navbar";
 function Header() {
     return (
         <>
             <div class="border">
                 <div class="bone1"></div>
                 <div className="bone2">
-                    
-                    
+                    <NavBar/>
                 </div>
                 <div class="bone3"></div>
                 <div className="title">PEOPLE ASSOCIATION FOR INNER ENGINEERING</div>
