@@ -1,11 +1,11 @@
 import React from "react";
 import Header from "../../header/header";
-function Aboutaol(){
+function Aboutpaie(){
     return(
         <>
         <Header/>
-        <h1>Art Of Living</h1>
+        <h1>PAIE CELL</h1>
         </>
     )
 }
-export default Aboutaol;
+export default Aboutpaie;

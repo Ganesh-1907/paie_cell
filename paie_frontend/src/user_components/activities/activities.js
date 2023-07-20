@@ -51,7 +51,8 @@ function Activity(){
       };
     return(
         <>
-        <h1>ACTIVITIES</h1>
+        <h1 className="activities">ACTIVITIES</h1>
+        <h5 className="activities">Social and Development Activities Conducted by PAIE CELL</h5>
         <div className='Carousel-a'>
 
                 <Slider {...settings}>

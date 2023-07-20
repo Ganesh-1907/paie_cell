@@ -4,10 +4,7 @@ function Aboutsrkr(){
     return(
         <>
         <Header/>
-        <div className="about-srkr-container">
-            <div></div>
-
-        </div>
+        <h1>srkrec</h1>
         </>
 
     )

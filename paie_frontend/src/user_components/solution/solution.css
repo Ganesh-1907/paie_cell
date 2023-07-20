@@ -1,0 +1,11 @@
+.solution-container{
+    padding: 5rem;
+    display: flex;
+    justify-content: space-between;
+}
+.solution-container h3{
+    color: orange;
+}
+.solution{
+    text-align: center;
+}
