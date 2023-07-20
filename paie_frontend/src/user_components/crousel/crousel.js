@@ -44,26 +44,31 @@ function Crousel(){
             <Slider {...settings}>
             <div className='box-c'>
               <div className="slider-container">
-              <div id="crousel-text"><h2>FIT INDIA CHALLENGE WINNER</h2></div>
-                <div id="crousel-image"><img src={image1} height="280px" width="700px" /> </div>
+                <div id="crousel-image"><img src={image1} height="300px" width="650px" /></div>
+                <div id="crousel-text"><h2>Mana Ooru Mana Niru </h2></div>
               </div>
-                
             </div>
             <div className='box-c'>
                 <h3>ganesh</h3>
                 <h3>sreeja</h3>
             </div>
             <div className='box-c'>
-                <h3>plastic drive</h3>
+            <div className="slider-container">
+                <div id="crousel-image"><img src={image1} height="300px" width="650px" /></div>
+                <div id="crousel-text"><h2>FIT INDIA CHALLENGE WINNER</h2></div>
+              </div>
             </div>
             <div className='box-c'>
-                <h3>women empowerment</h3>
+            <div className="slider-container">
+                <div id="crousel-image"><img src={image1} height="300px" width="650px" /></div>
+                <div id="crousel-text"><h2>DAILY YOGA</h2></div>
+              </div>
             </div>
             <div className='box-c'>
-                <h3>menstrual cycle</h3>
-            </div>
-            <div className='box-c'>
-                <h3>manasa ganga ashram</h3>
+            <div className="slider-container">
+                <div id="crousel-image"><img src={image1} height="300px" width="650px" /></div>
+                <div id="crousel-text"><h2></h2></div>
+              </div>
             </div>
 
             </Slider>
