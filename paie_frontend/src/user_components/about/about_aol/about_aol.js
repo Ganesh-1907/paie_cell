@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "../../header/header";
 import gurupic from '../../../Assets/guruji_1.jpg';
+import '../about_aol/about_aol.css';
 function Aboutaol(){
     return(
         <>

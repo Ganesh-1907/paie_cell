@@ -16,8 +16,6 @@ import Admin from '../../admin_components/admin/admin';
 import Login from "../Login/Login";
 import Flash from "../flash/flash";
 import Events from "../events/events";
-import '../about/about_srkr/about_srkr.css';
-import '../about/about_aol/about_aol.css';
 import '../about/about_paie/about_paie.css';
 import Aboutsrkr from "../about/about_srkr/about_srkr";
 import Aboutaol from "../about/about_aol/about_aol";
