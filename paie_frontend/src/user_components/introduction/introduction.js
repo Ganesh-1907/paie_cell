@@ -28,7 +28,7 @@ function Introduction(){
                         them highly valued graduates and opening doors to a wide range of exciting careers.
                         Sri S. Prasad Raju, the President of the institution, carries forward the vision of
                         his father Late Sri Sagi Rama Krishnam Raju, a philanthropist, driving the institution 
-                        on the academic path of excellence.   <a href="">Read More..</a></p>
+                        on the academic path of excellence.   <a href="aboutsrkr">Read More..</a></p>
 
                 </div>  
             </div>
@@ -71,7 +71,7 @@ function Introduction(){
                        organization with chapters in many parts of the world.Its stress-elimination and self-development 
                        programs are based on the breathing technique Sudarshan Kriya, meditation and yoga.This technique 
                        is a major part of Art of Living courses.These courses have been conducted for students and faculty,
-                       government officials,firemen,ex-militants,and prisoners.  <a href="">Read More..</a></p>    
+                       government officials,firemen,ex-militants,and prisoners.  <a href="aboutaol">Read More..</a></p>    
                 </div>  
             </div>
         </div>

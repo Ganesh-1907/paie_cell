@@ -23,48 +23,34 @@ border: 1px;
 min-height: 5.5rem;
 background-color: rgb(235, 74, 30);
 }
-
-/* .bone3{
-border:1px;
-height:1vh;
-background-color: rgb(57, 118, 231);
-} */
 .title{
     font-size: 31px;
     font-family: Arial, Helvetica, sans-serif;
-    margin: 10px 0px 0px 340px;
     font-weight: bold;
     color: rgb(15, 15, 163); 
+    text-align: center;
 }
 .subtitle{
-    margin: -5px 0px 0px 460px;
     font-size: 15px;
     font-family: Arial, Helvetica, sans-serif;
     color: rgb(235, 46, 46);
     font-weight:bold;
+    text-align: center;
 }
 .foundation{
     color: red;
     font-weight: bolder;
     font-size: 17px;
 }
-@media only screen and (max-width:576px)
+@media only screen and (max-width:990px)
 {
     .title {
-        font-size: 24px;
-        margin: 10px 0px 0px 20px;
+        font-size: 23px;
+    
     }
 
     .subtitle {
-        margin: -5px 0px 0px 20px;
-        font-size: 14px;
+       
+        font-size: 13px;
     }
-}
-@media only screen and (max-width:991px)
-{
-
-}
-@media only screen and (max-width:1200px)
-{
-
 }

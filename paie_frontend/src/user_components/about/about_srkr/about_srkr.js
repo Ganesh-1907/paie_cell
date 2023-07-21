@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "../../header/header";
 import rajupic from '../../../../src/Assets/rama_raju.jpg';
+import '../about_srkr/about_srkr.css';
 function Aboutsrkr(){
     return(
         <>
