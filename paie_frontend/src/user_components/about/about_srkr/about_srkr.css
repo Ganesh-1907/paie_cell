@@ -8,7 +8,7 @@ span
 {
     font-weight:bolder;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: 1.05rem;
+    font-size: 1.1rem;
 }
 
 h1{
@@ -33,6 +33,7 @@ h3{
 
 .writin{
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: larger;
 }
 
 #qpolic h3{
@@ -49,7 +50,7 @@ h3{
 {
     justify-content: left;
 }
-@media only screen and (max-width: 1300px ) {
+@media only screen and (max-width: 1470px ) {
     #qpolic h3{
         margin-left: 0rem;
     }
@@ -70,7 +71,7 @@ h3{
    
    
   }
-  @media only screen and (max-width: 980px) {
+  @media only screen and (max-width: 985px) {
    
     #mission{
         margin-left:0rem;
@@ -81,10 +82,10 @@ h3{
    
     
   } 
-  @media only screen and (max-width: 410px) {
+  @media only screen and (max-width: 420px) {
    
-    #mission h3,#vission h3 ,#footprint h3,#qpolic h3{
-        margin-left:-1rem;
+    #mission h3,#vission h3 ,#footprint h3,#qpolic h3 ,#sfeatures h3{
+        margin-left:-2rem;
     }
    
     
