@@ -8,7 +8,7 @@ span
 {
     font-weight:bolder;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: 1.05rem;
+    font-size: 1.1rem;
 }
 
 h1{
@@ -33,6 +33,7 @@ h3{
 
 .writin{
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: larger;
 }
 
 #qpolic h3{
