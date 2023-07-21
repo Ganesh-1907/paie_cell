@@ -75,10 +75,10 @@ h3{
    
     
   } 
-  @media only screen and (max-width: 410px) {
+  @media only screen and (max-width: 420px) {
    
     #courses h3,#organization h3 ,#service h3{
-        margin-left:-1rem;
+        margin-left:-2rem;
     }
    
     
