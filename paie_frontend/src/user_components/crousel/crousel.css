@@ -1,7 +1,7 @@
 .crousel-container{
-    height: 62vh;
-    background-color: rgb(57, 118, 231);
-    margin: 10px 0px 0px 0px;
+  background-color: rgb(89, 136, 224);
+  padding: 10px 0px 0px 115px;
+  height: 75vh;
 }
 *{
     padding: 0;
@@ -9,17 +9,17 @@
     box-sizing: border-box;
   }
   .Carousel-c{
-    padding: 3.5rem;
-    background-color:rgb(224, 224, 224);
+    padding: 4rem;
+    background-color:rgb(89, 136, 224);
     color: black;
     height: 67vh;
-    width: 98.8vw;
+    width: 80vw;
     position: relative;
   }
   .box-c{
     background-color: white;
     border: 5px solid red;
-    height: 360px;
+    height: 350px;
     margin: 0px 0px 0px 0px;
   }
   .box-c h3{
