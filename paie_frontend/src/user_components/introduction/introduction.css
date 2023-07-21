@@ -1,42 +1,15 @@
-.intro-container{
-    height: 85vh;
-    background-color:whitesmoke;
-    display: flex;
-    justify-content: space-evenly;
+.introduction-container{
+    padding: 3rem;
+    height: 60vh;
+    /* background-color: rgb(176, 166, 166); */
 }
-.intro-left{
-    width: 28%;
-    height: 85vh;
+#rajupic{
+    float:left;
+    width: fit-content;
+    padding:0  0.5rem 0 0;
+    
 }
-.intro-middle{
-    width: 28%;
-    height: 80vh;
-}
-.intro-right{
-    width: 28%;
-    height: 80vh;
-}
-.block-division{
-    display: flex;
-    justify-content: space-around;
-}
-.founder{
-    margin: 0px 0px 0px 0px;
-}
-.intro-left-left{
-    width: 40%;
-    height: 31vh;
-}
-.intro-left-right{
-    width: 55%;
-    height: 31vh;
-    background-color: green;
-}
-.intro-left-right h5{
-    font-weight: bold;
-    color: red;
-    margin: 0px 0px 0px 0px;
-}
-.intro-left-right p{
-    margin: 7px 0px 0px 0px;
+.writin{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: large;
 }

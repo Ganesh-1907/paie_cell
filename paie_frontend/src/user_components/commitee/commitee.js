@@ -10,7 +10,7 @@ function Commitee(){
         <div className="body">
         <h1>PAIE (PEOPLE ASSOCIATIONS FOR INNER ENGINEERING) </h1>
         <div id="mampic">
-          <img src={gurupic} />
+          <img src={gurupic} width="230px" height="270px" />
         </div>
         <div className="writin"><p>
             Headed by <span>Dr. P. Bhavani</span>, Associate Professor, Department of Engineering Chemistry, is formed with a vision to bring awareness about one’s self. Under PAIE (SRKR) we have been organizing 
@@ -23,7 +23,9 @@ function Commitee(){
               </p>
             <li><span>PAIE</span> cell is organised by <span>Dr.P.Ramesh raju</span>, Yoga teacher ,<span>PAIE</span> cell.</li>
           </div><br/>
+          <br/><br/>
           <h1>PAIE CELL COMMITTEE</h1>
+           <br/>
           <div class="table-responsive text-center" >
             <table class="table" >
 

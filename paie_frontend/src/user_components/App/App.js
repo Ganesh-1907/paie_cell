@@ -10,17 +10,20 @@ import '../activities/activities.css';
 import '../../user_components/programmes/programme.css';
 import '../../user_components/solution/solution.css';
 import '../../user_components/footer/footer.css';
+import '../about/about_paie/about_paie.css';
+import '../../user_components/happinessclub/happinessclub.css';
 import { BrowserRouter,Route,Routes } from 'react-router-dom';
 import Home from "../Home/Home";
 import Admin from '../../admin_components/admin/admin';
 import Login from "../Login/Login";
 import Flash from "../flash/flash";
 import Events from "../events/events";
-import '../about/about_paie/about_paie.css';
+
 import Aboutsrkr from "../about/about_srkr/about_srkr";
 import Aboutaol from "../about/about_aol/about_aol";
 import Aboutpaiecell from "../about/about_paie/about_paie";
 import Commitee from "../commitee/commitee";
+import HappinessClub from "../happinessclub/happinessclub";
 function App(){
     return(
     <>
@@ -35,6 +38,7 @@ function App(){
         <Route path="/aboutpaiecell" element={<Aboutpaiecell/>}></Route>
         <Route path="/aboutaol" element={<Aboutaol/>}></Route>
         <Route path="/commitee" element={<Commitee/>}></Route>
+        <Route path="/happinessclub" element={<HappinessClub/>}></Route>
         
     </Routes>
     </BrowserRouter>
