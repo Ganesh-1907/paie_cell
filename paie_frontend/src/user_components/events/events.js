@@ -20,12 +20,13 @@ const Events= () => {
             data.map((item)=>{
                 return(
                     <>
-                        <div className="event-container">
+                    <div className="event-container">
                           <div className="event-date">
                           <table >
-                            <tr>{item.month}</tr>
-                            <tr>{item.day}</tr>
-                            <tr>{item.event}</tr>
+                          <tr id="month">{item.month}</tr>
+                            <tr id="day">{item.day}</tr>
+                            
+                            <tr>{item.event}</tr> 
                           </table>
                           </div>
                         </div>

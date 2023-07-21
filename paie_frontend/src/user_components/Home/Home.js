@@ -6,6 +6,8 @@ import Introduction from "../introduction/introduction";
 import Events from "../events/events";
 import Activity from "../activities/activities";
 import Programme from "../programmes/programme";
+import Solution from "../solution/solution";
+import Footer from "../footer/footer";
 function Home(){
     return(
         <>
@@ -14,17 +16,17 @@ function Home(){
             <Header/>
             <Crousel/>
             <br/>
+            <Programme/>
+            <br/>
             <Introduction/>
             <br/>
-            <br/>
-            <br/>
-            <Programme/>
             <Events/>
             <br/>
-            <br/>
-            <br/>
-            <Activity/>
             
+            <Activity/>
+            <br/>
+            <Solution/>
+            <Footer/>
         </div>
         
         </>

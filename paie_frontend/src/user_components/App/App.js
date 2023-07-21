@@ -8,6 +8,8 @@ import '../events/event.css';
 import '../introduction/introduction.css';
 import '../activities/activities.css';
 import '../../user_components/programmes/programme.css';
+import '../../user_components/solution/solution.css';
+import '../../user_components/footer/footer.css';
 import { BrowserRouter,Route,Routes } from 'react-router-dom';
 import Home from "../Home/Home";
 import Admin from '../../admin_components/admin/admin';

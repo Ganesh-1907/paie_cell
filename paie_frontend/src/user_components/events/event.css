@@ -10,15 +10,21 @@
     border: 3px solid orangered;
 }
 .event-date table tr{
-        text-align:center;
+        font-size: larger;    
 }
 .event-event{
     width: 200px;
     height: 100px;
     background-color: green;
 }
-
-
+#day{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 40px;
+  text-align: center;
+}
+#month{
+  text-align: center;
+}
 
 
 *{
@@ -54,5 +60,4 @@
     color: #fff !important;
     font-size: 1rem !important;
     top: 2rem !important;
-  
   }
