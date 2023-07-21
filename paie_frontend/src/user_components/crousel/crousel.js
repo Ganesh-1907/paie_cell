@@ -3,6 +3,8 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from 'react-slick';
 import image1 from '../../Assets/MUMN.png';
+import image2 from '../../Assets/crousel-2.jpg';
+import image3 from '../../Assets/drug-crousel.jpg';
 function Crousel(){
     var settings = {
         dots: true,
@@ -15,8 +17,8 @@ function Crousel(){
           {
             breakpoint: 1024,
             settings: {
-              slidesToShow: 3,
-              slidesToScroll: 3,
+              slidesToShow: 1,
+              slidesToScroll: 1,
               infinite: true,
               dots: true
             }
@@ -24,8 +26,8 @@ function Crousel(){
           {
             breakpoint: 600,
             settings: {
-              slidesToShow: 2,
-              slidesToScroll: 2,
+              slidesToShow: 1,
+              slidesToScroll: 1,
               initialSlide: 2
             }
           },
@@ -49,19 +51,15 @@ function Crousel(){
               </div>
             </div>
             <div className='box-c'>
-                <h3>ganesh</h3>
-                <h3>sreeja</h3>
-            </div>
-            <div className='box-c'>
             <div className="slider-container">
-                <div id="crousel-image"><img src={image1} height="300px" width="650px" /></div>
-                <div id="crousel-text"><h2>FIT INDIA CHALLENGE WINNER</h2></div>
+                <div id="crousel-image"><img src={image2} height="300px" width="650px" /></div>
+                <div id="crousel-text"><h2>INAUGURATION BY PRINCIPAL ON INTERNATIONAL YOGA DAY</h2></div>
               </div>
             </div>
             <div className='box-c'>
             <div className="slider-container">
-                <div id="crousel-image"><img src={image1} height="300px" width="650px" /></div>
-                <div id="crousel-text"><h2>DAILY YOGA</h2></div>
+                <div id="crousel-image"><img src={image3} height="300px" width="650px" /></div>
+                <div id="crousel-text"><h2>DRUG FREE INDIA</h2></div>
               </div>
             </div>
             <div className='box-c'>

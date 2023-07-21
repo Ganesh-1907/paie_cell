@@ -30,7 +30,7 @@ app.post('/admin-event/:day/:month/:year/:event',async(req,res)=>{
 })
 
 app.get('/events/',async(req,res)=>{
-    const details=await db.collection("events-update").find({}).sort({_id : -1}).limit(10).toArray()
+    const details=await db.collection("events-update").find({}).sort({_id : -1}).toArray()
     res.json(details);
 })
 

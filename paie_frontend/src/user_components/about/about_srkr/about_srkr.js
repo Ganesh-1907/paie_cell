@@ -97,7 +97,6 @@ function Aboutsrkr(){
           </div>
         </div>
         </div>
-      
         </>
 
     )

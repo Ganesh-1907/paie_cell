@@ -20,7 +20,6 @@ function Home(){
             <br/>
             <Introduction/>
             <br/>
-            <Events/>
             <br/>
             
             <Activity/>

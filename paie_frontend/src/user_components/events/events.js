@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-
+import Header from "../header/header";
 const Events= () => {
     const[data,setData]=useState([]);
     useEffect(()=>{
         axios.get('http://localhost:8000/events')
         .then((responce)=>{   
-            setData(responce.data.sort().reverse());
+            setData(responce.data.sort());
         })
         .catch((err)=>{
             console.log(err);
@@ -15,20 +15,25 @@ const Events= () => {
 
     return(
         <>
-        <h1>EVENTS</h1>
+        <Header/>
+        <h1 className="events">EVENTS</h1>
         {
-            data.map((item)=>{
+             data.map((item)=>{
                 return(
                     <>
-                    <div className="event-container">
-                          <div className="event-date">
-                          <table >
-                          <tr id="month">{item.month}</tr>
-                            <tr id="day">{item.day}</tr>
-                            
-                            <tr>{item.event}</tr> 
-                          </table>
-                          </div>
+                        <div className="event-display">
+                            <table>
+                                <tr>
+                                    <td className="table1">
+                                        <th>{item.month}</th>
+                                        <tr><h1>{item.day}</h1></tr>
+                                        <th>{item.year}</th>
+                                    </td>
+                                    <td>
+                                    <th className="table-event">{item.event}</th>
+                                    </td>
+                                </tr>
+                            </table>
                         </div>
                     </>
                 )
