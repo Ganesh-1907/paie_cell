@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "../header/header";
-import gurupic from '../../Assets/guruji_1.jpg';
+import gurupic from '../../Assets/guruji.jpg';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../commitee/commitee.css';
 function Commitee(){
