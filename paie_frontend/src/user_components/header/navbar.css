@@ -15,10 +15,14 @@
   display: flex;
 }
 
-.me-auto :hover {
+/* .me-auto :hover {
   background-color: rgb(34, 34, 218);
   border-radius: 5px;
+} */
+.navbar .nav-link.dropdown-toggle {
+  color: white;
 }
+
 .navbar-toggler-right {
   margin-left: auto !important;
 }

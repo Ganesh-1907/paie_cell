@@ -1,4 +1,109 @@
-.about-srkr-container{
-    background-color: aqua;
-    height: 85vh;
+
+.body{
+    margin:2rem 2rem 0 2rem;
+    overflow: auto;
+    
 }
+span
+{
+    font-weight:bolder;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 1.05rem;
+}
+
+h1{
+    
+    font-size: 1.7rem;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+}
+
+h3{
+    padding-left: 1.9rem;
+    font-size: 1.3rem;
+    
+}
+#rajupic{
+    float:left;
+    width: fit-content;
+    padding:0  0.5rem 0 0;
+    
+}
+
+.writin{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+#qpolic h3{
+    margin-left: 0rem;
+    /* justify-content: left; */
+}
+#qpolic p{
+    margin-left: 1rem;
+}
+#mission{
+    margin:0 0 0 0;
+}
+#footprint p
+{
+    justify-content: left;
+}
+@media only screen and (max-width: 1300px ) {
+    #qpolic h3{
+        margin-left: 0rem;
+    }
+    #qpolic p,#footprint{
+        margin-left: 0rem;
+    }
+    #footprint h3
+    {
+        margin-left: -1rem;
+    }
+    #mission{
+        margin-left:11rem;
+    }
+    
+    #vission{
+        margin-left: 11rem;
+    }
+   
+   
+  }
+  @media only screen and (max-width: 980px) {
+   
+    #mission{
+        margin-left:0rem;
+    }
+    #vission,#footprint{
+        margin-left: 0rem;
+    }
+   
+    
+  } 
+  @media only screen and (max-width: 410px) {
+   
+    #mission h3,#vission h3 ,#footprint h3,#qpolic h3{
+        margin-left:-1rem;
+    }
+   
+    
+  } 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

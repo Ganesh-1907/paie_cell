@@ -18,7 +18,8 @@ import '../about/about_srkr/about_srkr.css';
 import '../about/about_aol/about_aol.css';
 import '../about/about_paie/about_paie.css';
 import Aboutsrkr from "../about/about_srkr/about_srkr";
-import Aboutaol from "../about/about_paie/about_paie";
+import Aboutaol from "../about/about_aol/about_aol";
+import Aboutpaiecell from "../about/about_paie/about_paie";
 function App(){
     return(
     <>
@@ -30,7 +31,9 @@ function App(){
         <Route path="/flash" element={<Flash/>}></Route>
         <Route path="/event" element={<Events/>}></Route>
         <Route path="/aboutsrkr" element={<Aboutsrkr/>}></Route>
+        <Route path="/aboutpaiecell" element={<Aboutpaiecell/>}></Route>
         <Route path="/aboutaol" element={<Aboutaol/>}></Route>
+        
     </Routes>
     </BrowserRouter>
     </>
