@@ -1,9 +1,16 @@
 import React from "react";
+import fitindia from "../../Documents/FIT INDIA CHALLENGE.pdf";
+import yogaforhumanity from "../../Documents/YOGA FOR HUMANITY.pdf";
+import Rudrapuja from "../../Documents/Rudra Pooja.pdf";
+import Yogadance from "../../Documents/Yoga Dance.pdf";
+import darapalli from "../../Documents/Visit to Darapalle.pdf";
+import yesday from "../../Documents/yes+ day 2022.pdf";
+
 function Footer(){
     return(
         <>
         <div className="footer-container">
-            <div>
+            <div >
                 <h2>COURSES</h2>
                 <p>yes+</p>
                 <p>DSN</p>
@@ -12,13 +19,14 @@ function Footer(){
                 <p>Happiness</p>
                 <p>sahaj samadi</p>
             </div>
-            <div>
-                <h2>Activities</h2>
-                <p><a href="">Fit India</a></p>
-                <p><a href="">Yoga for Humanity</a></p>
-                <p><a href="">Rudra puja</a></p>
-                <p><a href="">Yoga Dance</a></p>
-                <p><a href="">Visit to Darapalli</a></p>
+            <div className="footer-activity"> 
+                <h2 >Activities</h2>
+                <p><a href={fitindia} >Fit India</a></p>
+                <p><a href={yogaforhumanity} >Yoga for Humanity</a></p>
+                <p><a href={Rudrapuja} >Rudra puja</a></p>
+                <p><a href={Yogadance} >Yoga Dance</a></p>
+                <p><a href={darapalli} >Visit to Darapalli</a></p>
+                <p><a href={yesday}>YES+ Day</a></p>
             </div>
             <div>
                 <h2>sreeja</h2>

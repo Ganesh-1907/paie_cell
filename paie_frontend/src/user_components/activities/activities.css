@@ -17,8 +17,13 @@
     border: 5px solid red;
     height: 300px;
   }
-  .box-a h3{
+  .box-a h4{
     text-align: center;
+  }
+  .box-a h6{
+    text-align: center;
+    margin: 20px 0px 0px 0px;
+    line-height: 25px;
   }
   .slick-slide div{
     margin: 0 1rem;
@@ -33,7 +38,7 @@
   
   }
   .activity_logo{
-    margin: 10px 0px 0px 65px;
+    margin: 10px 0px 0px 70px;
   }
   .activities{
     text-align: center;
