@@ -11,7 +11,7 @@ function NavBar() {
     <>
     
     <div className='Navbar-container'>
-    <div className='logo-content'><img src={"paie_lg.jpg"} ></img></div>
+    <div className='logo-content'><a href='/'><img  src={"paie_lg.jpg"} ></img></a></div>
     <Navbar expand="lg" className="navbar">
       <Container fluid>
         <Navbar.Toggle aria-controls="basic-navbar-nav" className="navbar-toggler-left" />

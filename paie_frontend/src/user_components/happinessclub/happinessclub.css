@@ -14,6 +14,7 @@
 }
 .club-image{
     margin: 0px 0px 0px 400px;
+    border: 5px solid red;
 }
 .club-survey{
     font-size: 35px;

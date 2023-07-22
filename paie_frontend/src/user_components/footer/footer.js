@@ -13,9 +13,12 @@ function Footer(){
                 <p>sahaj samadi</p>
             </div>
             <div>
-                <h2>important links</h2>
-                <p>UHV</p>
-                <p></p>
+                <h2>Activities</h2>
+                <p><a href="">Fit India</a></p>
+                <p><a href="">Yoga for Humanity</a></p>
+                <p><a href="">Rudra puja</a></p>
+                <p><a href="">Yoga Dance</a></p>
+                <p><a href="">Visit to Darapalli</a></p>
             </div>
             <div>
                 <h2>sreeja</h2>
@@ -23,11 +26,12 @@ function Footer(){
             <div className="contact">
                 <h2>contact us</h2>
                 <p >
-                    SRKR ENGINEERING COLLEGE
-                     SRKR marg , chinnaamiram
-                    Bhimavaram,A.P,India -534204
-                      phone :   +91701113599,
-                    +91 9989927666
+                    SRKR ENGINEERING COLLEGE<br/>
+                    SRKR marg , chinnaamiram
+                    Bhimavaram,A.P,India -534204<br/>
+                    <span>phone :</span>  +91701113599,<br/>
+                    +91 9989927666 <br/>
+                    <span>Email :</span> paieactivities2002@gmail.com
                 </p>
             </div>
         </div>
