@@ -23,6 +23,7 @@ import Aboutsrkr from "../about/about_srkr/about_srkr";
 import Aboutaol from "../about/about_aol/about_aol";
 import Aboutpaiecell from "../about/about_paie/about_paie";
 import Commitee from "../commitee/commitee";
+import Courses from "../courses/courses";
 import HappinessClub from "../happinessclub/happinessclub";
 function App(){
     return(
@@ -37,6 +38,7 @@ function App(){
         <Route path="/aboutsrkr" element={<Aboutsrkr/>}></Route>
         <Route path="/aboutpaiecell" element={<Aboutpaiecell/>}></Route>
         <Route path="/aboutaol" element={<Aboutaol/>}></Route>
+        <Route path="/courses" element={<Courses/>}></Route>
         <Route path="/commitee" element={<Commitee/>}></Route>
         <Route path="/happinessclub" element={<HappinessClub/>}></Route>
         

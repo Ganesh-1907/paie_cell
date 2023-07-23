@@ -23,7 +23,7 @@ function NavBar() {
               <NavDropdown.Item href="aboutpaiecell">  PAIE CELL</NavDropdown.Item>
               <NavDropdown.Item href="aboutaol">ART OF LIVING</NavDropdown.Item>
             </NavDropdown>
-            <Nav.Link href="#link" style={{ color: 'white' }}>Courses</Nav.Link>
+            <Nav.Link href="courses" style={{ color: 'white' }}>Courses</Nav.Link>
             <Nav.Link href="commitee" style={{ color: 'white' }}>  Commitee</Nav.Link>
             <Nav.Link href="event" style={{ color: 'white' }}>Events</Nav.Link>
             <Nav.Link href="happinessclub" style={{ color: 'white' }}>HappinessClub</Nav.Link>
