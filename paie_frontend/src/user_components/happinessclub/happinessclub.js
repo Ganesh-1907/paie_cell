@@ -2,7 +2,7 @@ import React from "react";
 import Header from "../header/header";
 import image1 from "../../Assets/happiness-club-1.jpg";
 import image2 from "../../Assets/survey-pic.png";
-import images1 from "../../Assets/survey/survey-1.png";
+import images1 from "../../Assets/survey/survey-1.jpg";
 import images2 from "../../Assets/survey/survey-2.png";
 import images3 from "../../Assets/survey/survey-3.png";
 import images4 from "../../Assets/survey/survey-4.png";
