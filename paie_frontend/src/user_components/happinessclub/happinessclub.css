@@ -8,6 +8,10 @@
 .club-container h2 {
     float: left;
 }
+.club-container h3
+{
+    padding: 0 0 0 0 ;
+}
 
 .writin {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
@@ -31,7 +35,10 @@
 .club-image img {
     border: 5px solid red;
 }
-
+.club-survey-head
+{
+    text-align: center;
+}
 .club-survey {
     font-size: 35px;
     color: green;
@@ -39,12 +46,19 @@
 }
 
 .club-survey-p {
-    text-align: center;
+    
     color: orangered;
 }
 
 .one {
-    display: inline-flex;
+    margin-left: 0rem;
+}
+#happypic
+{
+    
+    float:right;
+    min-width: fit-content;
+    padding:0  0.5rem 0 0;
 }
 
 .result-cont {
@@ -60,7 +74,7 @@
 }
 
 /* Media query for responsive images */
-@media only screen and (max-width: 565px) {
+@media only screen and (max-width: 630px) {
     .club-image img {
         max-width: 100%;
         height: auto;
@@ -69,7 +83,10 @@
         max-width: 100%;
         height: auto;
     }
-    .one {
-        flex-wrap: wrap;
+    #happypic img
+    {
+       
+        max-width: 100%;
+        height: auto;
     }
 }
