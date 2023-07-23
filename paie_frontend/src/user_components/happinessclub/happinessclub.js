@@ -16,7 +16,9 @@ function HappinessClub() {
             <Header />
             <h1 className="club-title">HAPPINESS CLUB</h1>
             <div className="club-container">
-                    <img className="club-image" src={image1} />
+                <div className="club-image">
+                    <img  src={image1} />
+                    </div>
                     <br/><br/>
                 <div className="writin">
                     <h2 style={{color : "orangered" }}>About Happiness Club</h2>
@@ -63,16 +65,10 @@ function HappinessClub() {
                              <div className="result-cont">
                                 <div><img src={images1} /> </div>
                                 <div><img src={images2} /> </div>
-                             </div>
-                             <div className="result-cont">
                                 <div><img src={images3} /> </div>
                                 <div><img src={images4} /> </div>
-                             </div>
-                             <div className="result-cont">
                                 <div><img src={images5} /> </div>
                                 <div><img src={images8} /> </div>
-                             </div>
-                             <div className="result-cont">
                                 <div><img src={images6} /> </div>
                                 <div><img src={images7} /> </div>
                              </div>

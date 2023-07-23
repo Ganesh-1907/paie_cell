@@ -1,7 +1,4 @@
-.club-container{
-    padding: 3rem;
-    /* display: inline-flex; */
-}
+
 .writin{
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: large;
@@ -13,7 +10,11 @@
     margin: 20px 0px 0px 0px;
 }
 .club-image{
-    margin: 0px 0px 0px 400px;
+    display: flex;
+    justify-content: center;
+   
+}
+.club-image img{
     border: 5px solid red;
 }
 .club-survey{
@@ -29,11 +30,14 @@
     display: inline-flex;
 }
 .result-cont{
-    padding: 3rem;
-    display: inline-flex;
+  
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
     
 }
 .result-cont div{
     border: 3px solid red;
-    margin: 0px 0px 0px 80px;
+    margin: auto;
 }
