@@ -21,7 +21,7 @@ function HappinessClub() {
                     </div>
                     <br/><br/>
                 <div className="writin">
-                    <h2 style={{color : "orangered" }}>About Happiness Club</h2>
+                    <h2 style={{color : "orangered" }}>About Happiness Club</h2><br/><br/>
                     <p> Happiness Club was recently inaugurated in our college with the aim of promoting 
                         positivity, well-being, and mental health among students. The club will organise various 
                         activities and events such as meditation sessions, group discussions, and motivational 
@@ -32,7 +32,7 @@ function HappinessClub() {
                         <p>In order to create awareness on mind to make it able for 
                             shaping the young people careers, a session was planned by PAIE cell in association 
                             with the department of engineering chemistry</p>
-                            <h2 style={{color : "orangered"}}>FEEDBACK</h2>
+                            <h2 style={{color : "orangered"}}>FEEDBACK</h2><br/><br/>
                         <p>The creation of a happiness club can be a great initiative for promoting positivity, mental 
                             health, and overall well-being among the students. It can also provide a platform for students to 
                             connect with each other and participate in activities that promote happiness and positivity. 
