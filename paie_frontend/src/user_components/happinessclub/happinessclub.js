@@ -21,7 +21,7 @@ function HappinessClub() {
                     </div>
                     <br/><br/>
                 <div className="writin">
-                    <h2 style={{color : "orangered" }}>About Happiness Club</h2>
+                    <h2 style={{color : "orangered" }}>About Happiness Club</h2><br/><br/> 
                     <p> Happiness Club was recently inaugurated in our college with the aim of promoting 
                         positivity, well-being, and mental health among students. The club will organise various 
                         activities and events such as meditation sessions, group discussions, and motivational 
@@ -31,8 +31,8 @@ function HappinessClub() {
                         environment on campus and contribute to the overall well-being of the students.</p>
                         <p>In order to create awareness on mind to make it able for 
                             shaping the young people careers, a session was planned by PAIE cell in association 
-                            with the department of engineering chemistry</p>
-                            <h2 style={{color : "orangered"}}>FEEDBACK</h2>
+                            with the department of engineering chemistry</p><br/>
+                            <h2 style={{color : "orangered"}}>FEEDBACK</h2><br/><br/>
                         <p>The creation of a happiness club can be a great initiative for promoting positivity, mental 
                             health, and overall well-being among the students. It can also provide a platform for students to 
                             connect with each other and participate in activities that promote happiness and positivity. 
@@ -42,13 +42,17 @@ function HappinessClub() {
                            The club  also encourage students to engage in community service or volunteering activities, 
                            which can help build a sense of purpose and satisfaction.</p>
                            <hr/>
+                           <div className="club-survey-head">
                            <h1 className="club-survey">HAPPINESS SURVEY</h1>
+
                            <h3 className="club-survey-p">Survey conducted by Happiness Club to measure people's level of Happiness and Well-Being</h3>
+                           </div>
                            <br/>
+                           
                            <div className="one">
-                           <div>
-                           <p>On International Happiness Day, a happiness survey was conducted on a college campus, which was a great success.</p>
-                           <p>The survey aimed to gauge the level of happiness and satisfaction among the students and faculty members. 
+                           <div id="happypic"><img src={image2}  /></div>
+                           <p>On International Happiness Day, a happiness survey was conducted on a college campus, which was a great success.<br/>
+                            The survey aimed to gauge the level of happiness and satisfaction among the students and faculty members. 
                             The survey included questions about various aspects of life, such as mental well-being, level of happiness, 
                             botherations in life etc.A significant number of participants took part in the survey, reflecting a positive
                              response from the college community. The results of the survey showed that the majority of the 
@@ -56,9 +60,12 @@ function HappinessClub() {
                              students life to experience Inner Peace and to express Outer Dynamism! . The HAPPINESS CLUB kick started it’s 
                              first program “YES!+, Youth Empowerment Skills workshop” which attracted 150+ participants to take a step towards a 
                              healthier and happier lifestyle.</p>  
+                          
+                            
+                             
                              </div>
-                             <div><img src={image2}  /></div>
-                             </div>
+                            
+                            
                              <hr/>
                              <br/>
                              <h1 className="club-survey">RESULT OF HAPPINESS SURVEY</h1>

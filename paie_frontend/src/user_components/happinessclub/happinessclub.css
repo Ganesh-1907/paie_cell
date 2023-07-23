@@ -1,43 +1,92 @@
+/* Original styles as provided */
 
-.writin{
+.club-container {
+    margin: 1rem 1rem 0 1rem;
+    overflow: auto;
+}
+
+.club-container h2 {
+    float: left;
+}
+.club-container h3
+{
+    padding: 0 0 0 0 ;
+}
+
+.writin {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: large;
 }
-.club-title{
+
+.club-title {
     font-size: 35px;
     color: green;
     text-align: center;
     margin: 20px 0px 0px 0px;
 }
-.club-image{
+
+.club-image {
     display: flex;
     justify-content: center;
-   
+    width: auto;
+    height: auto;
 }
-.club-image img{
+
+.club-image img {
     border: 5px solid red;
 }
-.club-survey{
+.club-survey-head
+{
+    text-align: center;
+}
+.club-survey {
     font-size: 35px;
     color: green;
     text-align: center;
 }
-.club-survey-p{
-    text-align: center;
+
+.club-survey-p {
+    
     color: orangered;
 }
-.one{
-    display: inline-flex;
+
+.one {
+    margin-left: 0rem;
 }
-.result-cont{
-  
+#happypic
+{
+    
+    float:right;
+    min-width: fit-content;
+    padding:0  0.5rem 0 0;
+}
+
+.result-cont {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     flex-direction: row;
-    
 }
-.result-cont div{
+
+.result-cont div {
     border: 3px solid red;
-    margin: auto;
+    margin: 1rem auto 1rem auto;
+}
+
+/* Media query for responsive images */
+@media only screen and (max-width: 630px) {
+    .club-image img {
+        max-width: 100%;
+        height: auto;
+    }
+    .result-cont img {
+        max-width: 100%;
+        height: auto;
+    }
+    #happypic img
+    {
+       
+        max-width: 100%;
+        height: auto;
+    }
 }
