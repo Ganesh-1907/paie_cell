@@ -70,25 +70,25 @@ function Activity(){
                     <img className="activity_logo" src={image7} height="60px" width="60px" />
                     <h4>Daily Yoga</h4>
                     <h6>Practice of Yoga <br/> Meditation and Pranayamas <br/> By Students and Faculty </h6>
-                    <a href="">know more...</a>
+                    <p><a href="">know more...</a></p>
                 </div>
                 <div className='box-a'>
-                <img className="activity_logo" src={image4} height="65px" width="65px" />
+                    <img className="activity_logo" src={image4} height="65px" width="65px" />
                     <h4>Induction programme</h4> 
                     <h6>introducing Students to the Culture and Ambience of SRKR Engg college</h6> 
-                    <a href="">know more...</a>   
+                    <p><a href="">know more...</a></p>  
                 </div>
                 <div className='box-a'>
                     <img className="activity_logo" src={image6} height="60px" width="60px" />
                     <h4>Project Pavitra</h4>
                     <h6>Empower girls and women with knowledge and awareness on menstrual health and hygiene.</h6>
-                    <a href={projectpavitra}>Know more...</a>
+                    <p><a href={projectpavitra}>Know more...</a></p>
                 </div>
                 <div className='box-a'>
                 <img className="activity_logo" src={image5} height="60px" width="60px" />
                     <h4>plastic drive</h4>
                     <h6> Say no to plastic <br/>Make the college <br/>plastic free</h6>
-                    <a href={plasticdrive}>Know more...</a>
+                    <p><a href={plasticdrive}>Know more...</a></p>
                 </div>
                 <div className='box-a'>  
                     <img className="activity_logo" src={image2} height="60px" width="60px" />
@@ -98,25 +98,25 @@ function Activity(){
                     <img className="activity_logo" src={image8} height="60px" width="60px" />
                     <h4>International Yoga Day</h4>
                     <h6>To raise awareness in college about  benefits of practising yoga.</h6>
-                    <a href={internationalyogaday}>Know more...</a>
+                    <p><a href={internationalyogaday}>Know more...</a></p>
                 </div>
                 <div className='box-a'>  
                     <img className="activity_logo" src={image10} height="60px" width="60px" />
                     <h4>Good Touch & Bad Touch</h4>
                     <h6>protection of rights of children & initiative for rescuing and assisting children in distress</h6>
-                    <a href={goodtouch}>Know more ...</a>
+                    <p><a href={goodtouch}>Know more ...</a></p>
                 </div>
                 <div className='box-a'>  
                     <img className="activity_logo" src={image9} height="60px" width="70px" />
                     <h4>Mana Ooru Mana Neeru</h4>
                     <h6>create awareness about importance of water bodies by cleaning the local canals</h6>
-                    <a href={manaooru}>Know more ...</a>
+                    <p><a href={manaooru}>Know more ...</a></p>
                 </div>
                 <div className='box-a'>  
                     <img className="activity_logo" src={image11} height="60px" width="60px" />
                     <h4>Drug Free India</h4>
                     <h6>A campaign to make India drug free</h6>
-                    <a href={drugfree}>Know more...</a>
+                    <p><a href={drugfree}>Know more...</a></p>
                 </div>
                 
                 </Slider>

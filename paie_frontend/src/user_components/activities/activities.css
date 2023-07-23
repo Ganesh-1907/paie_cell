@@ -25,6 +25,10 @@
     margin: 20px 0px 0px 0px;
     line-height: 25px;
   }
+  .box-a p{
+    margin: 20px 0px 0px 0px;
+    text-align: center;
+  }
   .slick-slide div{
     margin: 0 1rem;
   }
