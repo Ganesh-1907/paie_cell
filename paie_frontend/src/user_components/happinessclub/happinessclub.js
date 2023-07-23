@@ -2,7 +2,7 @@ import React from "react";
 import Header from "../header/header";
 import image1 from "../../Assets/happiness-club-1.jpg";
 import image2 from "../../Assets/survey-pic.png";
-import images1 from "../../Assets/survey/survey-1.png";
+import images1 from "../../Assets/survey/survey-1.jpg";
 import images2 from "../../Assets/survey/survey-2.png";
 import images3 from "../../Assets/survey/survey-3.png";
 import images4 from "../../Assets/survey/survey-4.png";
@@ -16,7 +16,9 @@ function HappinessClub() {
             <Header />
             <h1 className="club-title">HAPPINESS CLUB</h1>
             <div className="club-container">
-                    <img className="club-image" src={image1} />
+                <div className="club-image">
+                    <img  src={image1} />
+                    </div>
                     <br/><br/>
                 <div className="writin">
                     <h2 style={{color : "orangered" }}>About Happiness Club</h2>
@@ -63,16 +65,10 @@ function HappinessClub() {
                              <div className="result-cont">
                                 <div><img src={images1} /> </div>
                                 <div><img src={images2} /> </div>
-                             </div>
-                             <div className="result-cont">
                                 <div><img src={images3} /> </div>
                                 <div><img src={images4} /> </div>
-                             </div>
-                             <div className="result-cont">
                                 <div><img src={images5} /> </div>
                                 <div><img src={images8} /> </div>
-                             </div>
-                             <div className="result-cont">
                                 <div><img src={images6} /> </div>
                                 <div><img src={images7} /> </div>
                              </div>
