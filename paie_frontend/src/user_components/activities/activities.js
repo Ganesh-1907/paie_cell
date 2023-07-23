@@ -12,6 +12,8 @@ import image8 from '../../Assets/international_yogaday.jpg';
 import image9 from '../../Assets/mananiru.jpg';
 import image10 from  '../../Assets/gtbt.jpeg';
 import image11 from '../../Assets/drug_free.webp';
+
+import projectpavitra from '../../Documents/Activities/_Project pavitra2019'
 function Activity(){
 
     var settings = {
@@ -81,6 +83,7 @@ function Activity(){
                 <img className="activity_logo" src={image5} height="60px" width="60px" />
                     <h4>plastic drive</h4>
                     <h6> Say no to plastic <br/>Make the college <br/>plastic free</h6>
+                    <a href="">Know more...</a>
                 </div>
                 <div className='box-a'>  
                     <img className="activity_logo" src={image2} height="60px" width="60px" />
@@ -100,12 +103,13 @@ function Activity(){
                     <img className="activity_logo" src={image9} height="60px" width="70px" />
                     <h4>Mana Ooru Mana Neeru</h4>
                     <h6>create awareness about importance of water bodies by cleaning the local canals</h6>
-                    <a href="">Knoe more ...</a>
+                    <a href="">Know more ...</a>
                 </div>
                 <div className='box-a'>  
                     <img className="activity_logo" src={image11} height="60px" width="60px" />
                     <h4>Drug Free India</h4>
                     <h6>A campaign to make India drug free</h6>
+                    <a href="">Know more...</a>
                 </div>
                 
                 </Slider>
