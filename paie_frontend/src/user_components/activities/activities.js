@@ -13,7 +13,7 @@ import image9 from '../../Assets/mananiru.jpg';
 import image10 from  '../../Assets/gtbt.jpeg';
 import image11 from '../../Assets/drug_free.webp';
 
-import projectpavitra from '../../Documents/Activities/_Project pavitra2019'
+// import projectpavitra from '../../Documents/Activities/_Project pavitra2019';
 function Activity(){
 
     var settings = {
