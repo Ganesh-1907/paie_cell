@@ -8,9 +8,10 @@ function Admin_event(){
     const[month,setmonth]=useState();
     const[year,setyear]=useState();
     const[event,setevent]=useState();
+    const[details,setdetails] = useState();
 
 const Event=async()=>{
-    const responce = await axios.post("http://localhost:8000/admin-event/"+day+"/"+month+"/"+year+"/"+event);
+    const responce = await axios.post("http://localhost:8000/admin-event/"+day+"/"+month+"/"+year+"/"+event+"/"+details);
     console.log(responce.data)
     if(responce.data){
         alert("update successfully")
@@ -22,12 +23,16 @@ const Event=async()=>{
 return(
     <>
      <h1>UPDATE EVENTS </h1>
-            <input type="number" name="event-day" placeholder="event-day...." onChange={(e)=>setday(e.target.value)} />
+            <input type="number" pattern="\d+" name="event-day" placeholder="event-day...." onChange={(e)=>setday(e.target.value)} />
             <input type="text" name="event-month" placeholder="event-month....." onChange={(e)=>setmonth(e.target.value)} />
             <input type="number" name="event-year" placeholder="event-year...." onChange={(e)=>setyear(e.target.value)} />
+            
             <br/>
             <br/>
             <input name="event-name" placeholder="enter the event name....." onChange={(e)=>setevent(e.target.value)} />
+            <br/>
+            <br/>
+            <input type="text" className="event-details" name="event-details" placeholder="event-details shortly" onChange={(e)=>setdetails(e.target.value)}/>
             <br/>
             <br/>
             <button type="button" onClick={Event}>UPDATE</button>

@@ -4,6 +4,21 @@
     display: flex;
     justify-content: space-evenly;
     color: white;
+    line-height: 25px;
+}
+.footer-container h3{
+    padding: 15px 0px 0px 0px;
+}
+.footer-activity h6{
+    margin: 10px 0px 0px 0px;
+    line-height: 25px;
+}
+.footer-document h6{
+    line-height: 25px;
+}
+.footer-document a{
+    color: white;
+    text-decoration: none;
 }
 .contact{
     width: 300px;
@@ -11,7 +26,7 @@
     color: white;
 }
 .contact p {
-    padding: 1rem;
+    padding: 10px 0px 0px 0px;
 }
 .footer-activity a{
     color: white;

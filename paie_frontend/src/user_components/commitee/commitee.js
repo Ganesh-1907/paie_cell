@@ -3,6 +3,7 @@ import Header from "../header/header";
 import gurupic from '../../Assets/guruji_1.jpg';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../commitee/commitee.css';
+import Footer from "../footer/footer";
 function Commitee(){
     return(
         <>
@@ -28,7 +29,6 @@ function Commitee(){
            <br/>
           <div class="table-responsive text-center" >
             <table class="table" >
-
                 <tr>
                      <th>S.no</th>
                      <th>Name of the Member</th>
@@ -97,6 +97,7 @@ function Commitee(){
             </table>
             </div>
         </div>
+        <Footer/>
         </>
     )
 }

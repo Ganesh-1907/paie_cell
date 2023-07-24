@@ -10,6 +10,7 @@ import images5 from "../../Assets/survey/survey-5.png";
 import images6 from "../../Assets/survey/survey-6.png";
 import images7 from "../../Assets/survey/survey-7.png";
 import images8 from "../../Assets/survey/survey-8.png";
+import Footer from "../footer/footer";
 function HappinessClub() {
     return (
         <>
@@ -81,6 +82,8 @@ function HappinessClub() {
                              </div>
                 </div>
             </div>
+            <br/>
+            <Footer/>
         </>
     )
 }
