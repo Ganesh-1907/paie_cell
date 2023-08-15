@@ -2,6 +2,7 @@ import React from "react";
 import Header from "../../header/header";
 import gurupic from '../../../Assets/guruji_1.jpg';
 import '../about_aol/about_aol.css';
+import Footer from "../../footer/footer";
 function Aboutaol(){
     return(
         <>
@@ -61,7 +62,7 @@ In September 2013, the 'I vote for better India' initiative was launched to incr
           
         </div>
         </div>
-      
+      <Footer/>
         </>
     )
 }

@@ -2,6 +2,7 @@ import React from "react";
 import '../courses/courses.css';
 import Header from "../header/header";
 import gurupic from '../../../src/Assets/guruji_1.jpg';
+import Footer from "../footer/footer";
 const Courses = ({ course }) => {
 
     return(
@@ -94,8 +95,8 @@ const Courses = ({ course }) => {
           <img src={gurupic} />
           </div>
         </div>
-        
       </div>
+      <Footer/>
         </>
     )
 

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Header from "../header/header";
+import Footer from "../footer/footer";
 const Events= () => {
     const[data,setData]=useState([]);
     useEffect(()=>{
@@ -21,24 +22,29 @@ const Events= () => {
              data.map((item)=>{
                 return(
                     <>
-                        <div className="event-display">
-                            <table>
-                                <tr>
-                                    <td className="table1">
-                                        <th>{item.month}</th>
-                                        <tr><h1>{item.day}</h1></tr>
-                                        <th>{item.year}</th>
-                                    </td>
-                                    <td>
-                                    <th className="table-event">{item.event}</th>
-                                    </td>
-                                </tr>
-                            </table>
+                        <div className="box-event">
+                            <div className="box-event-left">
+                                <table>
+                                    
+                                    <tr><h2>{item.day}</h2></tr>
+                                    <tr><h5>{item.month}</h5></tr>
+                                    <tr><h5>{item.year}</h5></tr>
+                                </table>
+                            </div>
+                            <div className="box-event-right">
+                                <table>
+                                    <tr><h5>{item.event}</h5></tr>
+                                    <tr><p>{item.details}</p></tr>
+                                </table>
+                            </div>
                         </div>
                     </>
                 )
             })
         }
+        <br/>
+        <br/>
+        <Footer/>
         </>
     );
 }

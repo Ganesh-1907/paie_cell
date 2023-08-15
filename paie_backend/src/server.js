@@ -19,12 +19,13 @@ app.get('/flash-news/',async(req,res)=>{
     res.json(details);
 })
 
-app.post('/admin-event/:day/:month/:year/:event',async(req,res)=>{
+app.post('/admin-event/:day/:month/:year/:event/:details',async(req,res)=>{
     const details=await db.collection("events-update").insertOne({
         day:req.params.day,
         month : req.params.month,
         year : req.params.year,
-        event:req.params.event
+        event:req.params.event,
+        details:req.params.details
        });
     res.json(details)
 })
