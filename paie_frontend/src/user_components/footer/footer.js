@@ -29,7 +29,6 @@ function Footer(){
             <div className="footer-activity"> 
                 <h3 >Special Activities</h3>
                 <hr/>
-                
                 <h6><a href={yogaforhumanity} >Yoga for Humanity</a></h6>
                 <h6><a href={Yogadance} >Yoga Dance</a></h6>
                 <h6><a href={yesday}>YES+ Day</a></h6>
@@ -47,8 +46,7 @@ function Footer(){
                 <h6><a href={intution} >Intution Course</a></h6>
                 <h6><a href={dsn} >DSN Course</a></h6>  
                 <h6><a href={artexcel} >Art Excel Course</a></h6>
-                <h6><a href={amc} >AMC Course</a></h6>
-                 
+                <h6><a href={amc} >AMC Course</a></h6> 
             </div>
             <div className="footer-document">
                 <h3>workshops</h3>
