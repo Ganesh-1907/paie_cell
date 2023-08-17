@@ -9,23 +9,7 @@ function Commitee(){
         <>
         <Header/>
         <div className="body">
-        <h1>PAIE (PEOPLE ASSOCIATIONS FOR INNER ENGINEERING) </h1>
-        <div id="mampic">
-          <img src={gurupic} width="230px" height="270px" />
-        </div>
-        <div className="writin"><p>
-            Headed by <span>Dr. P. Bhavani</span>, Associate Professor, Department of Engineering Chemistry, is formed with a vision to bring awareness about one’s self. Under PAIE (SRKR) we have been organizing 
-            YOGA training programs with the association of “The Art of Living Foundation” for the past 10 years. The activities of PAIE include:
-            <li>To bring awareness about health and happiness.</li>
-             <li>   To offer stress reduction techniques.</li>
-               <li> To build positive attitude and self-confidence in people.</li>
-             <li>   To bring environmental awareness.</li>
-              <li>  To nurture human values and inspire students to take up social responsibility.</li>
-              </p>
-            <li><span>PAIE</span> cell is organised by <span>Dr.P.Ramesh raju</span>, Yoga teacher ,<span>PAIE</span> cell.</li>
-          </div><br/>
-          <br/><br/>
-          <h1>PAIE CELL COMMITTEE</h1>
+        <h1>PAIE CELL COMMITTEE</h1>
            <br/>
           <div class="table-responsive text-center" >
             <table class="table" >
@@ -96,6 +80,23 @@ function Commitee(){
 
             </table>
             </div>
+        <h1>PAIE (PEOPLE ASSOCIATIONS FOR INNER ENGINEERING) </h1>
+        <div id="mampic">
+          <img src={gurupic} width="220px" height="270px" />
+        </div>
+        <div className="writin"><p>
+            Headed by <span>Dr. P. Bhavani</span>, Associate Professor, Department of Engineering Chemistry, is formed with a vision to bring awareness about one’s self. Under PAIE (SRKR) we have been organizing 
+            YOGA training programs with the association of “The Art of Living Foundation” for the past 10 years. The activities of PAIE include:
+            <li>To bring awareness about health and happiness.</li>
+             <li>   To offer stress reduction techniques.</li>
+               <li> To build positive attitude and self-confidence in people.</li>
+             <li>   To bring environmental awareness.</li>
+              <li>  To nurture human values and inspire students to take up social responsibility.</li>
+              </p>
+            <li><span>PAIE</span> cell is organised by <span>Dr.P.Ramesh raju</span>, Yoga teacher ,<span>PAIE</span> cell.</li>
+          </div><br/>
+          <br/><br/>
+          
         </div>
         <Footer/>
         </>
