@@ -1,6 +1,7 @@
 .footer-container{
+    width: 100%;
     background-color: rgb(89, 136, 224);
-    height: 50vh;
+    height:100%;
     display: flex;
     justify-content: space-evenly;
     color: white;
@@ -8,10 +9,12 @@
 }
 .footer-container h3{
     padding: 15px 0px 0px 0px;
+    /* font-size: small; */
 }
 .footer-activity h6{
     margin: 10px 0px 0px 0px;
     line-height: 25px;
+    /* font-size: small; */
 }
 .footer-document h6{
     line-height: 25px;
@@ -21,8 +24,8 @@
     text-decoration: none;
 }
 .contact{
-    width: 300px;
-    height: 300px;
+    width:25%;
+    height:100%;
     color: white;
 }
 .contact p {
@@ -32,4 +35,20 @@
     color: white;
     font-style: bold;
     text-decoration: none;
+}
+
+@media only screen and (max-width: 500px)
+{
+    .footer-container{
+        width: 100%;
+        font-size: xx-small;
+        overflow-x: scroll;
+    }
+    .footer-container h3{
+        padding: 0px 0px 0px 0px;
+    }
+    .contact
+    {
+        overflow-x: scroll;
+    }
 }

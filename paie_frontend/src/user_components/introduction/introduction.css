@@ -1,6 +1,6 @@
 .introduction-container{
     padding: 3rem;
-    height: 60vh;
+    height: 100%;
     /* background-color: rgb(176, 166, 166); */
 }
 #rajupic{
@@ -12,4 +12,5 @@
 .writin{
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: large;
+    height: 100%;
 }

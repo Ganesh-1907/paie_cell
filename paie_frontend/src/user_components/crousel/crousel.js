@@ -10,9 +10,11 @@ function Crousel(){
         dots: true,
         infinite: true,
         speed: 700,
-        slidesToShow: 1,
+        slidesToShow: 2,
         slidesToScroll: 1,
         initialSlide: 0,
+        autoplay: true,
+        autoplaySpeed: 1500,
         responsive: [
           {
             breakpoint: 1024,
@@ -32,7 +34,7 @@ function Crousel(){
             }
           },
           {
-            breakpoint: 480,
+            breakpoint:500,
             settings: {
               slidesToShow: 1,
               slidesToScroll: 1
@@ -48,25 +50,25 @@ function Crousel(){
             <div className='box-c'>
               <div className="slider-container">
                 <div id="crousel-image"><img src={image1} /></div>
-                <div id="crousel-text"><h2>Mana Ooru Mana Niru </h2></div>
+                <div id="crousel-text">Mana Ooru Mana Niru</div>
               </div>
             </div>
             <div className='box-c'>
             <div className="slider-container">
                 <div id="crousel-image"><img src={image2} /></div>
-                <div id="crousel-text"><h2>INAUGURATION BY PRINCIPAL ON INTERNATIONAL YOGA DAY</h2></div>
+                <div id="crousel-text">INAUGURATION BY PRINCIPAL ON INTERNATIONAL YOGA DAY</div>
               </div>
             </div>
             <div className='box-c'>
             <div className="slider-container">
                 <div id="crousel-image"><img src={image3}  /></div>
-                <div id="crousel-text"><h2>DRUG FREE INDIA</h2></div>
+                <div id="crousel-text">DRUG FREE INDIA</div>
               </div>
             </div>
             <div className='box-c'>
             <div className="slider-container">
                 <div id="crousel-image"><img src={image1} /></div>
-                <div id="crousel-text"><h2></h2></div>
+                <div id="crousel-text"></div>
               </div>
             </div>
 

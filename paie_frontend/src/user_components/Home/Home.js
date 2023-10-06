@@ -21,7 +21,6 @@ function Home(){
             <Introduction/>
             <br/>
             <br/>
-            
             <Activity/>
             <br/>
             <Solution/>

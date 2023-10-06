@@ -21,7 +21,6 @@ function Introduction(){
             </li>
             <li>Empowering the youth through various Social Activities which relate to our Surroundings</li>
             <li>To conduct stress free,relaxation,meditation programs in our college to both Students and Staff</li>
-
         </div>
        </div>
        </>

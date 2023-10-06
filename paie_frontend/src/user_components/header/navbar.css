@@ -1,8 +1,7 @@
 .Navbar-container
 {
   display: flex;
-  background-color: rgb(185, 204, 237);
- 
+  width: 100%;
 }
 .navbar {
   background-color: rgb(89, 136, 224);
@@ -52,4 +51,18 @@
   .navbar {
       min-height: 3rem;
     }
+}
+@media only screen and (max-width:500px)
+{
+  .logo-content
+  {
+    width: 100%;
+  }
+}
+@media only screen and (max-width:800px)
+{
+  .logo-content
+  {
+    width: 100%;
+  }
 }

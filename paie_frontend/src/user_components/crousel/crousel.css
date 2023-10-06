@@ -1,7 +1,8 @@
-.crousel-container{
+.crousel-container
+{
+  width: 100%;
   background-color: rgb(89, 136, 224);
-  padding: 10px 0px 0px 0px;
-  height: 68vh;
+  height: 65vh;
 }
 *{
     padding: 0;
@@ -10,21 +11,18 @@
   }
   .Carousel-c{
     padding: 3rem;
-    background-color:rgb(89, 136, 224);
     color: black;
     height: 66vh;
-    width: 96.5vw;
+    width:100%;
     position: relative;
   }
-  .box-c{
-    background-color: white;
-    border: 5px solid red;
-    height: 350px;
-    margin: 0px 0px 0px 0px;
-  }
-  .box-c h3{
-    text-align: center;
-  }
+
+  #crousel-text
+    {
+      font-size:large;
+      font-weight: bold;
+      text-align: center;
+    }
   .slick-slide div{
     margin: 0 1rem;
   }
@@ -34,39 +32,37 @@
   .slick-dots li button:before {
     color: #fff !important;
     font-size: 1rem !important;
-    top: 2rem !important;
+    /* top: 2rem !important; */
   }
-  .slider-container{
-    display: inline-flex;
-  }
+  
   .slider-container img{
-    height: 280px;
-    width: 600px;
-  }
-  #crousel-text{
-    margin: 60px 0px 0px 40px;
+    height: 40vh;
+    width: 80vh;
   }
   #crousel-image{
-    margin: 25px 0px 0px 20px;
-    height: 300px;
+    height: 45vh;
     width: 800px;
   }
- 
-  @media only screen and (max-width: 900px){
-    .crousel-container{
-      background-color: rgb(89, 136, 224);
-      padding: 35px 0px 0px 0px;
-      height: 65vh;
-    }
-    .Carousel-c{
-      padding: 1rem;
-      background-color:rgb(89, 136, 224);
-      color: black;
-      height: 60vh;
-      width: 97.5vw;
-      position: relative;
-    }
-  }
+ /* .slider-container
+ {
+  display: flex;
+  background-color: #fff;
+ } */
   @media only screen and (max-width: 500px){
-
+    .crousel-container{
+      height: 80vh;
+    }
+    .crousel-text
+    {
+      font-size: small;
+    }
+    .slider-container img{
+      height: 40vh;
+      width:50vw;
+    }
+    #crousel-image{
+      height: 45vh;
+      width:50vh;
+    }
+    
   }

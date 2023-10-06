@@ -39,10 +39,9 @@ import Slider from 'react-slick';
       };
     return(
         <>
-        <h1 className="courses">Programmes</h1>
+        <h1 className="courses">Programs</h1>
         <h5 className="courses">Courses/Programmes Conducted by PAIE CELL in Association with ART OF LIVING</h5>
-                        <div className='Carousel-p'>
-
+                <div className='Carousel-p'>
                 <Slider {...settings}>
                 <div className='box-p'>
 

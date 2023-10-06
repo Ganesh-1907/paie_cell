@@ -9,7 +9,7 @@
     background-color:rgb(224, 224, 224);
     color: black;
     height: 80vh;
-    width: 100vw;
+    width: 100%;
   }
   .box-p{
     background-color: rgb(255, 255, 255);
@@ -37,12 +37,26 @@
   .courses{
     text-align: center;
   }
-  @media only screen and (max-width:1024px) {
+  @media only screen and (max-width:500px) {
 
     .Carousel-p{
       padding: 5rem 2rem 0rem 2rem;
       height: 38rem;
-      
+      width: 100%;
+    }
+    .slick-slide div{
+      margin: 0 0.5rem;
+    }
+    .box-p p{
+      margin: 15px 0px -8px 10px;
+    }
+  }
+  @media only screen and (max-width:900px) {
+
+    .Carousel-p{
+      padding: 5rem 2rem 0rem 2rem;
+      height: 38rem;
+      width: 100%;
     }
     .slick-slide div{
       margin: 0 0.5rem;
