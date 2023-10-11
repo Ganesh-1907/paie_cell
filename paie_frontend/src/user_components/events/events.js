@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from "react";
 import axios from "axios";
-import Header from "../header/header";
+import React, { useEffect, useState } from "react";
 import Footer from "../footer/footer";
+import Header from "../header/header";
 const Events= () => {
     const[data,setData]=useState([]);
     useEffect(()=>{
-        axios.get('http://localhost:8000/events')
+        axios.post('http://localhost:8000/events')
         .then((responce)=>{   
             setData(responce.data.sort());
         })
@@ -17,6 +17,7 @@ const Events= () => {
     return(
         <>
         <Header/>
+        <div className="event">
         <h1 className="events">EVENTS</h1>
         {
              data.map((item)=>{
@@ -44,6 +45,7 @@ const Events= () => {
         }
         <br/>
         <br/>
+        </div>
         <Footer/>
         </>
     );

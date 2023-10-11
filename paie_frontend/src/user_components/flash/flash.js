@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from "react";
 import axios from "axios";
+import React, { useEffect, useState } from "react";
 import image2 from '../../Assets/clg logo.png';
 
 const Flash= () => {
     const[flash,setflash]=useState([]);
 
     useEffect(()=>{
-        axios.get('http://localhost:8000/flash-news')
+        axios.post('http://localhost:8000/flash-news')
         .then((responce)=>{   
             setflash(responce.data.sort().reverse());
         })

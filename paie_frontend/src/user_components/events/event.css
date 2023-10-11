@@ -6,6 +6,11 @@
   font-family:Verdana, Geneva, Tahoma, sans-serif;
 
 }
+.event
+{
+  width: 100%;
+  min-height: 80vh;
+}
 .box-event{
   height: 170px;
   width: 600px;
