@@ -7,3 +7,9 @@
 {
     background-color: red;
 }
+.btns
+{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 7%;
+}

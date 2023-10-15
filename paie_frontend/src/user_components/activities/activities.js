@@ -1,27 +1,11 @@
-import React from "react";
-import "slick-carousel/slick/slick.css"; 
-import "slick-carousel/slick/slick-theme.css";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 import Slider from 'react-slick';
-import image1 from '../../Assets/inner_eng.png';
-import image2 from '../../Assets/uhv.png';
-import image4 from '../../Assets/introduction.png';
-import image5 from '../../Assets/plastic_drive.webp';
-import image6 from '../../Assets/project_pavitra.jpeg';
-import image7 from '../../Assets/daily_yoga.jpeg';
-import image8 from '../../Assets/international_yogaday.jpg';
-import image9 from '../../Assets/mananiru.jpg';
-import image10 from  '../../Assets/gtbt.jpeg';
-import image11 from '../../Assets/drug_free.webp';
-
-import dailyyoga from '../../Documents/Activities/Daily yoga.pdf';
-import projectpavitra from '../../Documents/Activities/Project pavithra.pdf';
-import plasticdrive from '../../Documents/Activities/plastic drive Event.pdf';
-import internationalyogaday from '../../Documents/Activities/INTERNATIONAL YOGA DAY.pdf';
-import drugfree from '../../Documents/Activities/Drug Free India.pdf';
-import manaooru from '../../Documents/Activities/Mana Ooru Mana Neru.pdf';
-import goodtouch from '../../Documents/Activities/Good touch & bad touch.pdf';
-// import { Link } from "react-router-dom";
-function Activity(){
+import "slick-carousel/slick/slick-theme.css";
+import "slick-carousel/slick/slick.css";
+function Activity()
+{
+  const [data,sdata]=useState([]);
 
     var settings = {
         dots: true,
@@ -30,6 +14,8 @@ function Activity(){
         slidesToShow: 5,
         slidesToScroll: 5,
         initialSlide: 0,
+        autoplay: true,
+        autoplaySpeed: 3500,
         responsive: [
           {
             breakpoint: 1024,
@@ -57,6 +43,14 @@ function Activity(){
           }
         ]
       };
+      useEffect(()=>
+    {
+        axios.post("http://localhost:8000/actiphotos")
+        .then((res)=>
+        {
+            sdata(res.data)
+        })
+    })
     return(
         <>
         <h1 className="activities">ACTIVITIES</h1>
@@ -64,57 +58,16 @@ function Activity(){
         <div className='Carousel-a'>
 
                 <Slider {...settings}>
-                <div className='box-a'>
-                    <img className="activity_logo" src={image7} height="60px" width="60px" />
-                    <h4>Daily Yoga</h4>
-                    <h6>Practice of Meditation <br/>Yoga  and Pranayamas<br/> By Students and<br/> Faculty. <a href={dailyyoga} > more...</a> </h6>
+                {
+                  data.map((val)=>
+                  (
+                    <div className='box-a'>
+                    <img className="activity_logo" src={val.Link} height="60px" width="60px" />
+                    <h4>{val.Theme}</h4>
+                    <h6>{val.Description}</h6>
                 </div>
-                <div className='box-a'>
-                <img className="activity_logo" src={image5} height="60px" width="60px" />
-                    <h4>plastic drive</h4>
-                    <h6> Say no to use plastic <br/>and Make the <br/>college plastic <br/>free<a href={plasticdrive}> more...</a></h6>
-                </div>
-                <div className='box-a'>  
-                    <img className="activity_logo" src={image11} height="60px" width="60px" />
-                    <h4>Drug Free India</h4>
-                    <h6>A campaign to create awareness in youth and society to make India drug free<a href={drugfree}> more...</a></h6>
-                </div>
-                <div className='box-a'>
-                    <a href={projectpavitra}><img className="activity_logo" src={image6} height="60px" width="60px" /></a>
-                    <h4>Project Pavitra</h4>
-                    <h6>Empower girls and women with knowledge and awareness on menstrual health<a href={projectpavitra}> more...</a></h6>
-                </div>
-                <div className='box-a'>  
-                    <img className="activity_logo" src={image8} height="60px" width="60px" />
-                    <h4>International Yoga Day</h4>
-                    <h6>To raise awareness in college about  benefits of practising yoga.<a href={internationalyogaday}>more...</a></h6>
-                </div>
-                <div className='box-a'>
-                    <img  className="activity_logo" src={image4} height="65px" width="65px" />
-                    <h4>Induction programme</h4> 
-                    <h6>introducing Students to the Culture and Ambience of SRKR Engineering <br/>college.<a href=""> more...</a></h6> 
-                </div>
-                <div className='box-a'>  
-                    <img className="activity_logo" src={image10} height="60px" width="60px" />
-                    <h4>Good Touch & Bad Touch</h4>
-                    <h6>protection of rights of children & initiative for rescuing children in<br/> distress<a href={goodtouch}> more ...</a></h6>
-                    
-                </div>
-                <div className='box-a'>  
-                    <img className="activity_logo" src={image9} height="60px" width="70px" />
-                    <h4>Mana Ooru Mana Neeru</h4>
-                    <h6>create awareness about importance of water bodies by cleaning the local <br/>canals<a href={manaooru}> more ...</a></h6>
-                </div>
-                <div className='box-a'>
-                    <img className="activity_logo" src={image1} height="60px" width="60px" />
-                    <h4>Inner Engineering</h4>
-                </div> 
-                <div className='box-a'>  
-                    <img className="activity_logo" src={image2} height="60px" width="60px" />
-                    <h4>Universal Human Values</h4>
-                </div>
-                
-                
+                  ))
+                }
                 </Slider>
     </div>
         </>

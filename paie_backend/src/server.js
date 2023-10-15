@@ -32,6 +32,8 @@ app.post('/events/',async(req,res)=>{
     const details=await db.collection("events-update").find({}).sort({_id : -1}).toArray()
     res.json(details);
 })
+
+// **************************************Coursel**********************************************//
 app.post('/addphotos',async(req,res)=>
 {
     await db.collection("Coruselphotos").insertOne({imageName:req.body.imgname,imageCode:req.body.name,Link:req.body.url})
@@ -59,6 +61,46 @@ app.post('/photos',async(req,res)=>
 app.post('/delphoto/:photo',async(req,res)=>
 {
     await db.collection("Coruselphotos").deleteOne({imageCode:req.params.photo})
+    .then((details)=>
+    {
+        res.json(details)
+    })
+    .catch((e)=>
+    {
+        console.log("OK cool");
+    })
+})
+
+
+
+// ****************************************Activities ************************************************* //
+app.post('/addactivity',async(req,res)=>
+{
+    await db.collection("Activities").insertOne({Theme:req.body.theme,Description:req.body.desc,imageCode:req.body.name,Link:req.body.url})
+    .then((details)=>
+    {
+        res.json(details)
+    })
+    .catch((e)=>
+    {
+        console.log("try again");
+    })
+})
+app.post('/actiphotos',async(req,res)=>
+{
+    await db.collection("Activities").find().toArray()
+    .then((details)=>
+    {
+        res.json(details)
+    })
+    .catch((e)=>
+    {
+        console.log("OK cool");
+    })
+})
+app.post('/delactiphoto/:photo',async(req,res)=>
+{
+    await db.collection("Activities").deleteOne({imageCode:req.params.photo})
     .then((details)=>
     {
         res.json(details)

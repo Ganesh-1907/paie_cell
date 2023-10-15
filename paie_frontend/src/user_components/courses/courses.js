@@ -3,6 +3,7 @@ import '../courses/courses.css';
 import Header from "../header/header";
 import gurupic from '../../../src/Assets/guruji_1.jpg';
 import Footer from "../footer/footer";
+import Flash from "../flash/flash";
 const Courses = ({ course }) => {
 
     return(

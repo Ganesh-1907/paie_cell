@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import axios from "axios";
 import Button from "react-bootstrap/esm/Button";
+import { Head } from "../head/head";
     
 function Admin_event(){
 
@@ -23,6 +24,7 @@ const Event=async()=>{
 }
 return(
     <>
+    <Head/>
      <h1 style={{textAlign:'center'}}>UPDATE EVENTS </h1>
             <div  style={{display:'grid',justifyContent:'center'}}>
             <input type="number" pattern="\d+" name="event-day" placeholder="event-day...." onChange={(e)=>setday(e.target.value)} />

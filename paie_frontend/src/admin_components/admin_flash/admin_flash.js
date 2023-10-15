@@ -1,7 +1,7 @@
-import React, { useEffect } from "react";
-import { useState } from "react";
 import axios from "axios";
+import React, { useEffect, useState } from "react";
 import Button from "react-bootstrap/esm/Button";
+import { Head } from "../head/head";
 function Admin_flash(){
 
     const[flash,setflash]=useState([]);
@@ -34,6 +34,7 @@ function Admin_flash(){
     })
     return(
         <>
+        <Head/>
             <h1 style={{textAlign:'center'}}>FLASH NEWS UPDATE</h1>
            <div style={{display:'flex',justifyContent:'space-evenly'}}>
             <textarea type="text" style={{width:'50%'}} defaultValue={data.flash} placeholder="update flash news here....."  onChange={(e)=>setflash(e.target.value)}/>

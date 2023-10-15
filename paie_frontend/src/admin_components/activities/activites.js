@@ -1,19 +1,21 @@
-import axios from 'axios';
+import axios from "axios";
 import { initializeApp } from "firebase/app";
 import { deleteObject, getDownloadURL, getStorage, ref, uploadBytes } from "firebase/storage";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Button from "react-bootstrap/esm/Button";
 import { v4 } from 'uuid';
+import Header from "../../user_components/header/header";
 import image from "../addingphotos/imageupload.jpeg";
-import "../admin.css";
-import { Head } from '../head/head';
-export const Photos=()=>
+import { Head } from "../head/head";
+export const Activites=()=>
 {
     const [load,sload]=useState(false);
     const [file, sfile] = useState([]);
     const [img,simg]=useState([]);
     const [theme,stheme]=useState([]);
     const [data,sdata]=useState([]);
+    const [desc,sdesc]=useState([]);
+    const inputref=useRef(null);
     let imgname;
     let name;
     const firebaseConfig = {
@@ -30,20 +32,22 @@ export const Photos=()=>
     const Upload=async()=>
     {
         sload(true)
-        const imgref=ref(imgdb,`paiecell/Coursel/${v4()}`);
+        const imgref=ref(imgdb,`paiecell/Activities/${v4()}`);
         uploadBytes(imgref,file).then((val)=>
         {
             // console.log(imgref.name)
             getDownloadURL(val.ref).then(async(url)=>
             {
-                imgname=theme
                 name=imgref.name
-                await axios.post("http://localhost:8000/addphotos",{imgname,name,url})
+                await axios.post("http://localhost:8000/addactivity",{theme,desc,name,url})
                 .then((res)=>
                 {
                     if(res.data)
                     {
                         sload(false)
+                        inputref.current.value='';
+                        stheme('');
+                        sfile('')
                     }
                 })
                 .catch((e)=>
@@ -57,8 +61,8 @@ export const Photos=()=>
     const Deletephoto=async()=>
     {
         const storage = getStorage();
-        const desertRef=ref(storage,`paiecell/Coursel//${img}`)
-        deleteObject(desertRef) && axios.post("http://localhost:8000/delphoto/"+img)
+        const desertRef=ref(storage,`paiecell/Activities/${img}`)
+        deleteObject(desertRef) && axios.post("http://localhost:8000/delactiphoto/"+img)
         .then(()=>
         {
             alert("Deleted");
@@ -70,7 +74,7 @@ export const Photos=()=>
     }
     useEffect(()=>
     {
-        axios.post("http://localhost:8000/photos")
+        axios.post("http://localhost:8000/actiphotos")
         .then((res)=>
         {
             sdata(res.data)
@@ -79,13 +83,13 @@ export const Photos=()=>
     return(
         <>
         <Head/>
-        <h1 style={{textAlign:'center'}}>Crousel Photos</h1>
+        <h1 style={{textAlign:'center'}}>Activites Photos</h1>
         <div >
            {
             data.map((val)=>
             (
                 <>
-                <img width={200} height={200} src={val.Link} style={{marginLeft:'10%'}}/>
+                <img width={200} height={200} src={val.Link} style={{margin:'0 0 3% 10%'}}/>
                 <Button className='coruselbtn' onClick={Deletephoto} onClickCapture={()=>simg(val.imageCode)}>X</Button>
                 </>
             ))
@@ -93,7 +97,7 @@ export const Photos=()=>
         </div>
         <br/><br/>
         <div style={{display:'flex',justifyContent:'center'}}>
-            <input type="text"  style={{width:'20%',height:'5vh'}} placeholder="Enter photo Theme" onChange={(e)=>{stheme(e.target.value)}}/>
+            <input value={theme} style={{width:'20%',height:'5vh',border:'solid blue'}} placeholder="Enter photo Theme" onChange={(e)=>{stheme(e.target.value)}} />
             <label style={{
                         width: 70,
                         height: 50,
@@ -105,7 +109,10 @@ export const Photos=()=>
             </label><label>{file.name}</label>
                 <input type="file" id="photo" style={{display:'none'}} onChange={(e)=>sfile(e.target.files[0])}/>
         </div>
-        <div style={{justifyContent:'center',display:'flex',padding:'5%'}}>
+        <div style={{justifyContent:'center',display:'flex',padding:'5% 0 5% 0'}}>
+            <textarea style={{width:'30%',height:'20vh',border:'solid black'}} placeholder="Enter Description" onChange={(e)=>sdesc(e.target.value)} ref={inputref}/>
+        </div>
+        <div style={{justifyContent:'center',display:'flex',paddingBottom:'10%'}}>
         <Button onClick={Upload} >{load?"Uploading":"Upload"}</Button>
         </div>
         </>
