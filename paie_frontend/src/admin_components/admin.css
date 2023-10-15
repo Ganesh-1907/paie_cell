@@ -1,0 +1,9 @@
+.coruselbtn
+{
+    background-color: black;
+    border:none;
+}
+.coruselbtn:hover
+{
+    background-color: red;
+}

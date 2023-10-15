@@ -6,7 +6,7 @@ const Flash= () => {
     const[flash,setflash]=useState([]);
 
     useEffect(()=>{
-        axios.post('http://localhost:8000/flash-news')
+        axios.post('http://localhost:8000/flashnews')
         .then((responce)=>{   
             setflash(responce.data.sort().reverse());
         })
