@@ -89,7 +89,7 @@ export const Activites=()=>
             data.map((val)=>
             (
                 <>
-                <img width={200} height={200} src={val.Link} style={{margin:'0 0 3% 10%'}}/>
+                <img width={150} height={150} src={val.Link} style={{margin:'0 0 3% 10%'}}/>
                 <Button className='coruselbtn' onClick={Deletephoto} onClickCapture={()=>simg(val.imageCode)}>X</Button>
                 </>
             ))

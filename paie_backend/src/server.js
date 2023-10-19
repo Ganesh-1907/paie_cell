@@ -107,7 +107,44 @@ app.post('/delactiphoto/:photo',async(req,res)=>
     })
     .catch((e)=>
     {
-        console.log("OK cool");
+        console.log(e);
+    })
+})
+
+
+// *************************************************Gallery*****************************************//
+app.post('/addgallery',async(req,res)=>
+{
+    await db.collection("Gallery").findOne({Theme:req.body.theme})
+    .then(async(details1)=>
+    {
+        if(details1)
+        {
+            await db.collection("Gallery").findOneAndUpdate({ Theme: req.body.theme }, { $push: { Photo: req.body.url } })
+                .then((details) => {
+                    res.json(details)
+                })
+                .catch((e) => {
+                    console.log(e);
+                })
+        }
+        else
+        {
+            let link=req.body.url;
+            await db.collection("Gallery").insertOne({Theme: req.body.theme,Photo:[link]})
+        }
+    })
+})
+app.post('/showgallery',async(req,res)=>
+{
+    await db.collection("Gallery").find().toArray()
+    .then((details)=>
+    {
+        res.json(details)
+    })
+    .catch((e)=>
+    {
+        console.log(e);
     })
 })
 

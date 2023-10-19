@@ -27,7 +27,7 @@ function NavBar() {
             <Nav.Link href="commitee" style={{ color: 'white' }}>  Commitee</Nav.Link>
             <Nav.Link href="event" style={{ color: 'white' }}>Events</Nav.Link>
             <Nav.Link href="happinessclub" style={{ color: 'white' }}>HappinessClub</Nav.Link>
-            <Nav.Link href="#link" style={{ color: 'white' }}>Gallery</Nav.Link>
+            <Nav.Link href="gallery" style={{ color: 'white' }}>Gallery</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

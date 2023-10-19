@@ -1,33 +1,35 @@
 import React from "react";
-import './App.css';
-import '../Login/Login.css';
-import '../flash/flash.css';
-import '../header/header.css';
-import '../crousel/crousel.css';
-import '../events/event.css';
-import '../introduction/introduction.css';
-import '../activities/activities.css';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { AddGallery } from "../../admin_components/Admin_Gallery/admin_gallery";
+import { Activites } from "../../admin_components/activities/activites";
+import { Photos } from "../../admin_components/addingphotos/photo";
+import Admin from '../../admin_components/admin/admin';
+import Admin_event from "../../admin_components/admin_event/admin_event";
+import Admin_flash from "../../admin_components/admin_flash/admin_flash";
+import '../../user_components/footer/footer.css';
+import '../../user_components/happinessclub/happinessclub.css';
 import '../../user_components/programmes/programme.css';
 import '../../user_components/solution/solution.css';
-import '../../user_components/footer/footer.css';
-import '../about/about_paie/about_paie.css';
-import '../../user_components/happinessclub/happinessclub.css';
-import { BrowserRouter,Route,Routes } from 'react-router-dom';
+import { Gallery } from "../Gallery/gallery";
 import Home from "../Home/Home";
-import Admin from '../../admin_components/admin/admin';
 import Login from "../Login/Login";
-import Flash from "../flash/flash";
-import Events from "../events/events";
-import Admin_flash from "../../admin_components/admin_flash/admin_flash";
-import Admin_event from "../../admin_components/admin_event/admin_event";
-import { Photos } from "../../admin_components/addingphotos/photo";
-import Aboutsrkr from "../about/about_srkr/about_srkr";
+import '../Login/Login.css';
 import Aboutaol from "../about/about_aol/about_aol";
 import Aboutpaiecell from "../about/about_paie/about_paie";
+import '../about/about_paie/about_paie.css';
+import Aboutsrkr from "../about/about_srkr/about_srkr";
+import '../activities/activities.css';
 import Commitee from "../commitee/commitee";
 import Courses from "../courses/courses";
+import '../crousel/crousel.css';
+import '../events/event.css';
+import Events from "../events/events";
+import Flash from "../flash/flash";
+import '../flash/flash.css';
 import HappinessClub from "../happinessclub/happinessclub";
-import { Activites } from "../../admin_components/activities/activites";
+import '../header/header.css';
+import '../introduction/introduction.css';
+import './App.css';
 function App(){
     return(
     <>
@@ -39,6 +41,7 @@ function App(){
         <Route path="/login" element={<Login/>}></Route>
         <Route path="/flash" element={<Flash/>}></Route>
         <Route path="/event" element={<Events/>}></Route>
+        <Route path="/gallery" element={<Gallery/>}/>
         <Route path="/aboutsrkr" element={<Aboutsrkr/>}></Route>
         <Route path="/aboutpaiecell" element={<Aboutpaiecell/>}></Route>
         <Route path="/aboutaol" element={<Aboutaol/>}></Route>
@@ -49,6 +52,7 @@ function App(){
         <Route path="/addevent" element={<Admin_event/>}/>
         <Route path="/courselphoto" element={<Photos/>}/>
         <Route path="/addactivity" element={<Activites/>}/>
+        <Route path="/addgallery" element={<AddGallery/>}/>
     </Routes>
     </BrowserRouter>
     </>
