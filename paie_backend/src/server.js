@@ -148,6 +148,25 @@ app.post('/showgallery',async(req,res)=>
     })
 })
 
+// ***************************************Register*****************************************//
+app.post('/register/:name/:gmail/:phone/:branch/:sec/:reg',async(req,res)=>
+{
+    await db.collection("RegisterData").insertOne(
+        {
+            Name:req.params.name,
+            Gmail:req.params.gmail,
+            Phonenumber:req.params.phone,
+            Branch:req.params.branch,
+            Section:req.params.sec,
+            Registernumber:req.params.reg,
+        })
+    .then((details)=>
+    {
+        res.json(details)
+    })
+    .catch((e)=>console.log(e))
+})
+
 
 connectToDB(()=>{
     app.listen(8000,()=>{

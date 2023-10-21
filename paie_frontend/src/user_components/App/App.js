@@ -30,6 +30,9 @@ import HappinessClub from "../happinessclub/happinessclub";
 import '../header/header.css';
 import '../introduction/introduction.css';
 import './App.css';
+import { Register } from "../../admin_components/registrations/registrations";
+import { Confirmregister } from "../../admin_components/registrations/confirmregisteration";
+import { Uploadphoto } from "../Login/uploadphoto";
 function App(){
     return(
     <>
@@ -53,6 +56,9 @@ function App(){
         <Route path="/courselphoto" element={<Photos/>}/>
         <Route path="/addactivity" element={<Activites/>}/>
         <Route path="/addgallery" element={<AddGallery/>}/>
+        <Route path="/register" element={<Register/>}/>
+        <Route path="/confirmation" element={<Confirmregister/>}/>
+        <Route path="/uploadphoto" element={<Uploadphoto/>}/>
     </Routes>
     </BrowserRouter>
     </>

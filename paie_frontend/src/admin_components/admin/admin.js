@@ -15,7 +15,8 @@ function Admin(){
          </div>
          <div className="btns">
           <Button href="/addgallery">Gallery</Button>
-          <Button href="/addevent">YES+ Registrations</Button>
+          <Button href="/register">YES+ Registrations</Button>
+          <Button href="/confirmation">Registeration Confirmation</Button>
           {/* <Button href="/courselphoto">Add Crousel</Button>
           <Button href="/addflash">Add Activities</Button> */}
          </div>
