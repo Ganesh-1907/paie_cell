@@ -5,6 +5,12 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 export const Head=()=>
 {
+    const Logout=async()=>
+    {
+        sessionStorage.removeItem('adminmail');
+    }
+    // console.log(sessionStorage.gmail)
+
     return(
         <>
             <div className="border">
@@ -18,6 +24,10 @@ export const Head=()=>
                                 <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
                                     <Nav className="me-auto">
                                         <Nav.Link href="/admin" style={{ color: 'white' }}>Home</Nav.Link>
+                                        {
+                                            sessionStorage.adminmail?<Nav.Link href="/admin" style={{ color: 'red' }}  onClick={Logout}>Log Out</Nav.Link>:
+                                            <Nav.Link href="/admin" style={{ color: 'white' }}>Login</Nav.Link>
+                                        }
                                     </Nav>
                                 </Navbar.Collapse>
                             </Container>

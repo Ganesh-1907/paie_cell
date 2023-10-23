@@ -19,6 +19,7 @@ function NavBar() {
           <Nav className="me-auto">
             <Nav.Link href="/" style={{ color: 'white' }}>Home</Nav.Link>
             <NavDropdown id="nav-dropdown-light-example" title="About"  >
+              <NavDropdown.Item href='login'>Login</NavDropdown.Item>
               <NavDropdown.Item href="aboutsrkr">SRKR</NavDropdown.Item>
               <NavDropdown.Item href="aboutpaiecell">  PAIE CELL</NavDropdown.Item>
               <NavDropdown.Item href="aboutaol">ART OF LIVING</NavDropdown.Item>

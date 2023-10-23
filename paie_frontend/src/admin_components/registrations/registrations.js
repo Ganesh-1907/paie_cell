@@ -18,6 +18,7 @@ export const Register=()=>
            if(res.data)
            {
             alert('register sucessfully');
+            window.location.reload(3);
            }
            else
            {
@@ -47,7 +48,7 @@ export const Register=()=>
                         <label>Gmail :</label>
                     </td>
                     <td>
-                    <input type='gmail' placeholder='Enter Mail' onChange={(e)=>sgmail(e.target.value)}/>
+                    <input type='email' placeholder='Enter Mail' onChange={(e)=>sgmail(e.target.value.toLowerCase())}/>
                     </td>
                 </tr>
                 <br/>
@@ -56,7 +57,7 @@ export const Register=()=>
                         <label>Phone Number :</label>
                     </td>
                     <td>
-                    <input type='email' placeholder='Enter Phone Number' onChange={(e)=>sphone(e.target.value.toUpperCase())}/>
+                    <input type='number' placeholder='Enter Phone Number' onChange={(e)=>sphone(e.target.value.toUpperCase())}/>
                     </td>
                 </tr>
                 <br/>
@@ -65,7 +66,7 @@ export const Register=()=>
                         <label>Branch :</label>
                     </td>
                     <td>
-                    <input type='email' placeholder='Enter Branch' onChange={(e)=>sbranch(e.target.value.toUpperCase())}/>
+                    <input type='text' placeholder='Enter Branch' onChange={(e)=>sbranch(e.target.value.toUpperCase())}/>
                     </td>
                 </tr>
                 <br/>
@@ -74,7 +75,7 @@ export const Register=()=>
                         <label>Section :</label>
                     </td>
                     <td>
-                    <input type='email' placeholder='Enter Section' onChange={(e)=>ssec(e.target.value.toUpperCase())}/>
+                    <input type='text' placeholder='Enter Section' onChange={(e)=>ssec(e.target.value.toUpperCase())}/>
                     </td>
                 </tr>
                 <br/>
@@ -83,7 +84,7 @@ export const Register=()=>
                         <label>Register Number : </label>
                     </td>
                     <td>
-                    <input type='email' placeholder='Enter Register Number' onChange={(e)=>sreg(e.target.value.toUpperCase())}/>
+                    <input type='text' placeholder='Enter Register Number' onChange={(e)=>sreg(e.target.value.toUpperCase())}/>
                     </td>
                 </tr>
                 <br/>

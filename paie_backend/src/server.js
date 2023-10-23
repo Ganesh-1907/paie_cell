@@ -1,12 +1,48 @@
 import cors from "cors";
 import express from 'express';
 import { connectToDB, db } from './db.js';
-
 const app=express()
 app.use(express.json())
 app.use(cors())
 
-
+// *************************************************Admin*********************************************//
+app.post('/paieadmin/:mail/:pass',async(req,res)=>
+{
+    await db.collection("Admin").insertOne({Gmail:req.params.mail,Password:req.params.pass})
+    .then((details)=>
+    {
+        res.json(details)
+    })
+    .catch((e)=>console.log(e))
+})
+app.post('/aollink',async(req,res)=>
+{
+    await db.collection("Admin").findOneAndUpdate({Gmail:req.body.adminmail},{$set:{YesLink:req.body.aollink}})
+    .then((details)=>
+    {
+        res.json(details)
+    })
+    .catch((e)=>console.log(e))
+})
+app.post('/sslink',async(req,res)=>
+{
+    await db.collection("Admin").findOneAndUpdate({Gmail:req.body.adminmail},{$set:{photoLink:req.body.sslink}})
+    .then((details)=>
+    {
+        res.json(details)
+    })
+    .catch((e)=>console.log(e))
+})
+app.post('/verifyadmin/:mail',async(req,res)=>
+{
+    await db.collection("Admin").findOne({Gmail:req.params.mail})
+    .then((details)=>
+    {
+        res.json(details)
+    })
+    .catch((e)=>console.log(e))
+})
+// *************************************************Flash news****************************************//
 app.post('/flashnews/:flash',async(req,res)=>{
     const details=await db.collection("Flashnews").deleteMany() && await db.collection("Flashnews").insertOne({flash:req.params.flash});
     res.json(details)
@@ -17,6 +53,8 @@ app.post('/flashnews',async(req,res)=>{
     res.json(details);
 })
 
+
+// ******************************************************Events************************************************//
 app.post('/admin-event/:day/:month/:year/:event/:details',async(req,res)=>{
     const details=await db.collection("events-update").insertOne({
         day:req.params.day,
@@ -32,6 +70,7 @@ app.post('/events/',async(req,res)=>{
     const details=await db.collection("events-update").find({}).sort({_id : -1}).toArray()
     res.json(details);
 })
+
 
 // **************************************Coursel**********************************************//
 app.post('/addphotos',async(req,res)=>
@@ -120,7 +159,7 @@ app.post('/addgallery',async(req,res)=>
     {
         if(details1)
         {
-            await db.collection("Gallery").findOneAndUpdate({ Theme: req.body.theme }, { $push: { Photo: req.body.url } })
+            await db.collection("Gallery").findOneAndUpdate({ Theme: req.body.theme }, { $push: { Photo:{Name:req.body.name,Link:req.body.url}} })
                 .then((details) => {
                     res.json(details)
                 })
@@ -131,7 +170,8 @@ app.post('/addgallery',async(req,res)=>
         else
         {
             let link=req.body.url;
-            await db.collection("Gallery").insertOne({Theme: req.body.theme,Photo:[link]})
+            let name=req.body.name
+            await db.collection("Gallery").insertOne({Theme: req.body.theme,Photo:[{Name:name,Link:link}]})
         }
     })
 })
@@ -147,6 +187,16 @@ app.post('/showgallery',async(req,res)=>
         console.log(e);
     })
 })
+app.post('/deletegalleryphoto',async(req,res)=>
+{
+    await db.collection("Gallery").findOneAndUpdate({Theme:req.body.file.val.Theme},{$pull:{Photo:req.body.file.val1}})
+    .then((details)=>
+    {
+        res.json(details);
+    })
+    .catch((e)=>console.log(e))
+})
+
 
 // ***************************************Register*****************************************//
 app.post('/register/:name/:gmail/:phone/:branch/:sec/:reg',async(req,res)=>
@@ -166,7 +216,60 @@ app.post('/register/:name/:gmail/:phone/:branch/:sec/:reg',async(req,res)=>
     })
     .catch((e)=>console.log(e))
 })
-
+app.post('/uploadscrnsrt',async(req,res)=>
+{
+    await db.collection("RegisterData").findOneAndUpdate({Gmail:req.body.mail},{$set:{Request:true,ScreenShort:req.body.url}})
+    .then((details)=>
+    {
+        res.json(details)
+    })
+    .catch((e)=>console.log(e));
+})
+app.post('/verify/:mail',async(req,res)=>
+{
+    await db.collection("RegisterData").findOne({Gmail:req.params.mail})
+    .then((details)=>
+    {
+        res.json(details)
+    })
+    .catch((e)=>console.log(e));
+})
+app.post('/registerdata',async(req,res)=>
+{
+    await db.collection("RegisterData").find().toArray()
+    .then((details)=>
+    {
+        res.json(details)
+    })
+    .catch((e)=>console.log(e));
+})
+app.post('/cnfrmregtr/:mail',async(req,res)=>
+{
+    await db.collection("RegisterData").findOneAndUpdate({Gmail:req.params.mail},{$set:{Confirm:true}})
+    .then((details)=>
+    {
+        res.json(details)
+    })
+    .catch((e)=>console.log(e))
+})
+app.post('/rmvrgtr/:mail',async(req,res)=>
+{
+    await db.collection("RegisterData").findOneAndUpdate({Gmail:req.params.mail},{$set:{Request:false,Confirm:false}})
+    .then((details)=>
+    {
+        res.json(details)
+    })
+    .catch((e)=>console.log(e))
+})
+app.post('/updatepassword/:mail/:pass',async(req,res)=>
+{
+    await db.collection("RegisterData").findOneAndUpdate({Gmail:req.params.mail},{$set:{Password:req.params.pass}})
+    .then((details)=>
+    {
+        res.json(details)
+    })
+    .catch((e)=>console.log(e))
+})
 
 connectToDB(()=>{
     app.listen(8000,()=>{

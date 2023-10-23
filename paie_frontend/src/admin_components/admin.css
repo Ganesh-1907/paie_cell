@@ -32,3 +32,27 @@
     border: none;
     border-bottom: blue solid 0.5px;
 }
+.openphoto
+{
+    width: 80%;
+    height: 70vh;
+    margin: 0vh 10%;
+    position: absolute;
+    display: none;
+}
+.aollink
+{
+    margin-top: 5%;
+    display: flex;
+    justify-content:center;
+}
+.aollink input
+{
+    width: 60vh;
+}
+.aollink button
+{
+    margin-left: 5%;
+    height: 5vh;
+    background-color: green;
+}

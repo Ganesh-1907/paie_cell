@@ -2,33 +2,15 @@ import React, { useState } from "react";
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';
-import Activity from "../activities/activities";
-import Crousel from "../crousel/crousel";
-import Footer from "../footer/footer";
-import Header from "../header/header";
-import Introduction from "../introduction/introduction";
-import Programme from "../programmes/programme";
-import Solution from "../solution/solution";
-function Home(){
+import Header from "../../header/header";
+export const Login=()=>
+{
     const [show, setShow] = useState(true);
-  const handleClose = () => setShow(false);
+    const handleClose = () => setShow(false);
     return(
         <>
-        <div className="main">
-            <Header/>
-            <Crousel/>
-            <br/>
-            <Programme/>
-            <br/>
-            <Introduction/>
-            <br/>
-            <br/>
-            <Activity/>
-            <br/>
-            <Solution/>
-            <Footer/>
-        </div>
-                <Modal  show={show} onHide={handleClose} >
+        <Header/>
+        <Modal  show={show} onHide={handleClose} >
                     <Modal.Header closeButton>
                         <Modal.Title>Are you done YES+.... Please login</Modal.Title>
                     </Modal.Header>
@@ -47,7 +29,7 @@ function Home(){
                                 controlId="exampleForm.ControlTextarea1"
                             >
                                 <Form.Label>Password</Form.Label>
-                                <Form.Control type="password" placeholder="Enter password"  />
+                                <Form.Control type="password" placeholder="Enter password" autoFocus />
                             </Form.Group>
                         </Form>
                     </Modal.Body>
@@ -64,4 +46,3 @@ function Home(){
         </>
     )
 }
-export default Home;

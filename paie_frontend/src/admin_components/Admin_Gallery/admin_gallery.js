@@ -12,8 +12,8 @@ export const AddGallery=()=>
     const[theme,stheme]=useState([]);
     const[file,sfile]=useState([]);
     const[load,sload]=useState(false);
-    let imgname;
-    let name;
+    let val2;
+
     const firebaseConfig = {
         apiKey: "AIzaSyBq36iHg3MK2o3acO9CEcK7FZkxaO3N490",
         authDomain: "paie-cell.firebaseapp.com",
@@ -30,16 +30,14 @@ export const AddGallery=()=>
         for(var i=0;i<file.length;i++)
         {
             sload(true)
-            const imgref = ref(imgdb, `paiecell/Galery/${v4()}`);
+            const imgref = ref(imgdb, `paiecell/Gallery/${theme}/${v4()}`);
             uploadBytes(imgref, file[i]).then((val) => {
                 getDownloadURL(val.ref).then(async (url) => {
-                    // name=imgref.name
-                    await axios.post("http://localhost:8000/addgallery", { theme, url })
+                    const name=imgref.name
+                    await axios.post("http://localhost:8000/addgallery", { theme,name, url })
                         .then((res) => {
                             if (res.data) {
                                 sload(false)
-                                sfile([]);
-                                stheme('')
                             }
                         })
                         .catch((e) => {
@@ -48,6 +46,27 @@ export const AddGallery=()=>
                 })
             })
         }
+    }
+    const Deletephoto=async()=>
+    {
+        const storage = getStorage();
+        const desertRef=ref(storage,`paiecell/Gallery/${file.val.Theme}/${file.val1.Name}`)
+        deleteObject(desertRef) && axios.post("http://localhost:8000/deletegalleryphoto",{file})
+        .then((res)=>
+        {
+            if(res.data)
+            {
+                alert("Deleted");
+            }
+            else
+            {
+                alert("Try again");
+            }
+        })
+        .catch((e)=>
+        {
+            console.log(e);
+        })
     }
     useEffect(()=>
     {
@@ -85,7 +104,8 @@ export const AddGallery=()=>
                     }}  for="photo"> <br/><br/><h5>select</h5>
 
             </label><label>{file.name}</label>
-                <input type="file" id="photo" style={{display:'none'}} multiple onChange={(e)=>sfile(e.target.files)}/>
+                <input type="file" accept=".jpg, .jpeg, .png, .gif" id="photo" style={{display:'none'}} multiple onChange={(e)=>sfile(e.target.files)}/>
+                <p>{sfile}</p>
         </div>
         <br/>
         <br/>
@@ -100,11 +120,12 @@ export const AddGallery=()=>
                <>
                <h1 style={{textAlign:'center',color:'blue'}}>{val.Theme}</h1>
                {
-                 val.Photo.map((val1)=>
+                 val.Photo.map((val1,index)=>
                  (
                      <>
-                         <img width={150} height={150} src={val1} style={{ margin: '0 0 3% 10%' }} />
-                         <Button className='coruselbtn'>X</Button>
+                         <img width={150} height={150} src={val1.Link} style={{ margin: '0 0 3% 10%' }} />
+                        <p style={{display:'none'}}></p>
+                         <Button className='coruselbtn' onClick={Deletephoto} onClickCapture={()=>{sfile({val,val1})}}>X</Button>
                     </>
                  ))
                }
