@@ -6,6 +6,8 @@ import Button from "react-bootstrap/esm/Button";
 export const FinalList=()=>
 {
     const[data,sdata]=useState([]);
+    const date=new Date
+    const[load,sload]=useState(false)
     useEffect(()=>
     {
         axios.post("http://localhost:8000/registerdata")
@@ -15,6 +17,27 @@ export const FinalList=()=>
         })
         .catch((e)=>console.log(e));
     })
+    const SubmitList=async()=>
+    {
+        sload(true)
+        axios.post("http://localhost:8000/finilizelist/"+date.toDateString())
+        .then((res)=>
+        {
+            if(res.data)
+            {
+                alert(date.toDateString()+"Submitted List")
+                sload(false)
+            }
+            else
+            {
+                sload(false)
+                alert("Try again");
+            }
+        })
+        .catch((e)=>console.log(e));
+        
+        console.log(date.toDateString())
+    }
     return(
         <>
         <Head/>
@@ -50,7 +73,9 @@ export const FinalList=()=>
             </Table>
             <Button style={{marginLeft:'10%'}} onClick={(e)=>{document.getElementById('totallist').style.display="none"}} onDoubleClick={(e)=>{document.getElementById('totallist').style.display="block"}}>Total List</Button>
             double click it's shows and singls click it close
-            <Button style={{float:'right',marginRight:'10%',backgroundColor:'green'}}>Submit List</Button>
+
+
+            <Button style={{float:'right',marginRight:'10%',backgroundColor:'green'}} onClick={SubmitList}>{load?"Submitting..":"Submit List"}</Button>
             <div style={{display:'none'}} id="totallist">
             <Table  bordered responsive hover variant="white">
                 <thead>

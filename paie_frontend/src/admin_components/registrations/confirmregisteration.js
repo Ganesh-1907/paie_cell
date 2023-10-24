@@ -6,6 +6,7 @@ import { Head } from "../head/head";
 export const Confirmregister=()=>
 {
     const[data,sdata]=useState([]);
+    const[data1,sdata1]=useState([]);
     const[photo,sphoto]=useState([])
     const [select,sselect]=useState([]);
     const Openphoto=async(photo)=>
@@ -18,37 +19,33 @@ export const Confirmregister=()=>
     }
     const Confirm=async()=>
     {
-        let ebody=`
+        await axios.post("http://localhost:8000/cnfrmregt/"+select.Gmail)
+        .then((res)=>
+        {
+            if (res.data) {
+                alert("Confirmed");
+                let ebody = `
         <p>This <b>Mail</b> from <h1>PAIE CELL</h1></p>
         <p>
         <b>Name::<b>${select.Name}
         <br/>
         <b>Gmail::<b>${select.Gmail}
         <br>
-        <p>we are inviting you to join in ART OF LIVING course here is the link to pay the amount for registration </p>
-        <h3>Click Here::</h3><h4></h4>
-        <p>After payment you will upload your screenshort in the below link then you will get login cerditinals</p>
-        <h4>Click Here::</h4>
+        <p>Your Password Update Link </p>
+        <h3>Click Here:: ${data1.UpdatepasswordLink} </h3><h4></h4>
         <p>
         `
-        window.Email.send({
-            SecureToken :"3c068e1e-2b17-48d8-b96f-2fa30f12bb6f",
-            To:"ramsaiandhavarapu07@gmail.com",
-            From :"aolsrkr2002@gmail.com",
-            Subject : "YES+ Registrations",
-            Body : ebody
-        }).then(
-          message =>alert(message)
-        )
-        await axios.post("http://localhost:8000/cnfrmregt/"+select.Gmail)
-        .then((res)=>
-        {
-            if(res.data)
-            {
-                alert("Confirmed");
+                window.Email.send({
+                    SecureToken: "3c068e1e-2b17-48d8-b96f-2fa30f12bb6f",
+                    To: (select.Gmail),
+                    From: "aolsrkr2002@gmail.com",
+                    Subject: "YES+ Registrations",
+                    Body: ebody
+                }).then(
+                    message => message === "OK" ? window.location.reload(3) : alert(message)
+                )
             }
-            else
-            {
+            else {
                 alert("Try again");
             }
         })
@@ -78,6 +75,14 @@ export const Confirmregister=()=>
             sdata(res.data)
         })
         .catch((e)=>console.log(e));
+        axios.post("http://localhost:8000/verifyadmin/" + sessionStorage.adminmail)
+        .then((res)=>
+        {
+            if(res.data)
+            {
+                sdata1(res.data)
+            }
+        })
     })
     return(
         <>

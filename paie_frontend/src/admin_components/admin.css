@@ -36,9 +36,10 @@
 {
     width: 80%;
     height: 70vh;
-    margin: 0vh 10%;
-    position: absolute;
+    margin: -15vh 10%;
+    position: fixed;
     display: none;
+    border: green solid 5px;
 }
 .aollink
 {

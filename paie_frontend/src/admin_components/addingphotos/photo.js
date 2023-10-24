@@ -10,9 +10,9 @@ import { Head } from '../head/head';
 export const Photos=()=>
 {
     const [load,sload]=useState(false);
-    const [file, sfile] = useState([]);
-    const [img,simg]=useState([]);
-    const [theme,stheme]=useState([]);
+    const [file, sfile] = useState('');
+    const [img,simg]=useState('');
+    const [theme,stheme]=useState();
     const [data,sdata]=useState([]);
     let imgname;
     let name;
@@ -27,9 +27,16 @@ export const Photos=()=>
     };
     const app = initializeApp(firebaseConfig);
     const imgdb = getStorage(app);
+    // console.log(typeof(file))
     const Upload=async()=>
     {
-        sload(true)
+        if(!theme || typeof(file)==='string')
+        {
+            alert("")
+        }
+        else
+        {
+            sload(true)
         const imgref=ref(imgdb,`paiecell/Coursel/${v4()}`);
         uploadBytes(imgref,file).then((val)=>
         {
@@ -44,6 +51,9 @@ export const Photos=()=>
                     if(res.data)
                     {
                         sload(false)
+                        sfile('')
+                        simg('')
+                        stheme('')
                     }
                 })
                 .catch((e)=>
@@ -52,6 +62,7 @@ export const Photos=()=>
                 })
             })
         })
+        }
         
     }
     const Deletephoto=async()=>
@@ -93,7 +104,7 @@ export const Photos=()=>
         </div>
         <br/><br/>
         <div style={{display:'flex',justifyContent:'center'}}>
-            <input type="text"  style={{width:'20%',height:'5vh'}} placeholder="Enter photo Theme" onChange={(e)=>{stheme(e.target.value)}}/>
+            <input type="text"  style={{width:'20%',height:'5vh'}} placeholder="Enter photo Theme" value={theme} onChange={(e)=>{stheme(e.target.value)}}/>
             <label style={{
                         width: 70,
                         height: 50,
@@ -103,7 +114,7 @@ export const Photos=()=>
                     }}  for="photo"> <br/><br/><h5>select Photo</h5>
 
             </label><label>{file.name}</label>
-                <input type="file" id="photo" style={{display:'none'}} onChange={(e)=>sfile(e.target.files[0])}/>
+                <input type="file" id="photo" accept=".jpg, .jpeg, .png, .gif" style={{display:'none'}} onChange={(e)=>sfile(e.target.files[0])}/>
         </div>
         <div style={{justifyContent:'center',display:'flex',padding:'5%'}}>
         <Button onClick={Upload} >{load?"Uploading":"Upload"}</Button>

@@ -8,18 +8,23 @@ function Admin()
 {
     const [show, setShow] = useState(true);
     const handleClose = () => setShow(false);
-    const[mail,smail]=useState('');
-    const[password,spassword]=useState('');
-    const[aollink,saollink]=useState('');
-    const[sslink,ssslink]=useState('');
+    const[mail,smail]=useState();
+    const[password,spassword]=useState();
+    const[aollink,saollink]=useState();
+    const[sslink,ssslink]=useState();
     const inputRef1=useRef();
     const inputRef=useRef();
     const btnRef=useRef();
     const adminmail=sessionStorage.adminmail;
     const Login=async()=>
     {
-        mail===''?alert("mail required"):
-        await axios.post("http://localhost:8000/verifyadmin/"+mail)
+        if(!mail || !password)
+        {
+            alert("");
+        }
+        else
+        {
+            await axios.post("http://localhost:8000/verifyadmin/"+mail)
         .then((res)=>
         {
             if(res.data)
@@ -40,40 +45,70 @@ function Admin()
             }
         })
         .catch((e)=>console.log(e))
+        }
     }
     const AOLLink=async()=>
     {
-        adminmail===''?alert(""):aollink===''?alert(""):
-        await axios.post("http://localhost:8000/aollink",{adminmail,aollink})
-        .then((res)=>
+        if(!adminmail || !aollink)
         {
-            if(res.data)
-            {
-                alert("Link Added")
-            }
-            else
-            {
-                alert("Try agian")
-            }
-        })
-        .catch((e)=>console.log(e))
+            alert("")
+        }
+        else
+        {
+            await axios.post("http://localhost:8000/aollink", { adminmail, aollink })
+                .then((res) => {
+                    if (res.data) {
+                        alert("Link Added")
+                        window.location.reload(3)
+                    }
+                    else {
+                        alert("Try agian")
+                    }
+                })
+                .catch((e) => console.log(e))
+        }
     }
     const ScreenShotLink=async()=>
     {
-        adminmail===''?alert(""):sslink===''?alert(""):
-        await axios.post("http://localhost:8000/sslink",{adminmail,sslink})
-        .then((res)=>
+        if(!adminmail||!sslink)
         {
-            if(res.data)
-            {
-                alert("Link Added")
-            }
-            else
-            {
-                alert("Try agian")
-            }
-        })
-        .catch((e)=>console.log(e))
+            alert("")
+        }
+        else
+        {
+            await axios.post("http://localhost:8000/sslink", { adminmail, sslink })
+                .then((res) => {
+                    if (res.data) {
+                        alert("Link Added")
+                        window.location.reload(3)
+                    }
+                    else {
+                        alert("Try agian")
+                    }
+                })
+                .catch((e) => console.log(e))
+        }
+    }
+    const UpdataPaswordLink=async()=>
+    {
+        if(!adminmail||!sslink)
+        {
+            alert("")
+        }
+        else
+        {
+            await axios.post("http://localhost:8000/updtpswd", { adminmail, sslink })
+                .then((res) => {
+                    if (res.data) {
+                        alert("Link Added")
+                        window.location.reload(3)
+                    }
+                    else {
+                        alert("Try agian")
+                    }
+                })
+                .catch((e) => console.log(e))
+        }
     }
     return(
         <>
@@ -96,17 +131,24 @@ function Admin()
          </div>
 
          <div className="aollink">
-            <input type="text" placeholder="Please Enter AOL YES+ Link Here..... if it change other wise leave it" onChange={(e)=>saollink(e.target.value)} ref={inputRef}
+            <input type="text" value={aollink} placeholder="Please Enter AOL YES+ Link Here..... if it change other wise leave it" onChange={(e)=>saollink(e.target.value)} ref={inputRef}
             onKeyDown={(e)=>e.key==='Enter'?btnRef.current.click():<b></b>}/>
             {
                 sessionStorage.adminmail?<Button onClick={AOLLink} ref={btnRef}>Submit</Button>:<b/>
             }
          </div>
          <div className="aollink">
-            <input type="text" placeholder="Please Enter Screen Short Upload Link Here..... if it change other wise leave it" onChange={(e)=>ssslink(e.target.value)}
+            <input type="text" value={sslink} placeholder="Please Enter Screen Short Upload Link Here..... if it change other wise leave it" onChange={(e)=>ssslink(e.target.value)}
             onKeyDown={(e)=>e.key==='Enter'?btnRef.current.click():<b></b>}/>
             {
                 sessionStorage.adminmail?<Button onClick={ScreenShotLink}>Submit</Button>:<b/>
+            }
+         </div>
+         <div className="aollink" style={{marginBottom:'10%'}}>
+            <input type="text" value={sslink} placeholder="Please Update password Link Here..... if it change other wise leave it" onChange={(e)=>ssslink(e.target.value)}
+            onKeyDown={(e)=>e.key==='Enter'?btnRef.current.click():<b></b>}/>
+            {
+                sessionStorage.adminmail?<Button onClick={UpdataPaswordLink}>Submit</Button>:<b/>
             }
          </div>
          </div>
@@ -124,7 +166,6 @@ function Admin()
                                     type="email"
                                     placeholder="Enter Gmail"
                                     ref={inputRef1}
-                                    onKeyDown={(e)=>e.key==='Enter'?btnRef.current.click():<b></b>}
                                     onChange={(e)=>smail(e.target.value)}
                                     autoFocus
                                 />

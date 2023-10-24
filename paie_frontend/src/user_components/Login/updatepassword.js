@@ -18,13 +18,16 @@ export const Update=()=>
                 if(password===cpassword)
                 {
                     await axios.post("http://localhost:8000/updatepassword/" + mail + "/" + password)
-                    .then((res1) => {
-                        if (res1.data) {
+                    .then((res1) => 
+                    {
+                        if (res.data.Confirm || res1.data.value)
+                        {
                             alert("Sucessfully Updated");
                             window.location="/";
                         }
-                        else {
-                            alert("Try again");
+                        else
+                        {
+                            alert("Please Pay Amount")
                         }
                     })
                     .catch((e) => console.log(e));

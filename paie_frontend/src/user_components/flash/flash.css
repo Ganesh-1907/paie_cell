@@ -50,8 +50,8 @@
           transform: translateX(-100%);
         }
       }
-.clg-logo{
-    margin: 3px 0px 0px 1260px;
+.clg-logo {
+    margin: 0px 0px 0px 1258px;
 }
 
 @media only screen and (max-width:500px)

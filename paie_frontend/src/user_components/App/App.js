@@ -51,12 +51,12 @@ function App(){
         <Route path="/addgallery" element={sessionStorage.adminmail?<AddGallery/>:<Admin/>}/>
         <Route path="/register" element={sessionStorage.adminmail?<Register/>:<Admin/>}/>
         <Route path="/confirmation" element={sessionStorage.adminmail?<Confirmregister/>:<Admin/>}/>
-        <Route path="/uploadphoto" element={sessionStorage.adminmail?<Uploadphoto/>:<Admin/>}/>
+        <Route path="/uploadphoto" element={<Uploadphoto/>}/>
         <Route path="/finallist" element={sessionStorage.adminmail?<FinalList/>:<Admin/>}/>
         <Route path="/updatepassword" element={<Update/>}/>
         <Route path="/flash" element={<Flash/>}></Route>
         <Route path="/event" element={<Events/>}></Route>
-        <Route path="/gallery" element={<Gallery/>}/>
+        <Route path="/gallery" element={sessionStorage.studentmail?<Gallery/>:<Home/>}/>
         <Route path="/aboutsrkr" element={<Aboutsrkr/>}></Route>
         <Route path="/aboutpaiecell" element={<Aboutpaiecell/>}></Route>
         <Route path="/aboutaol" element={<Aboutaol/>}></Route>

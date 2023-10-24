@@ -10,11 +10,11 @@ import { Head } from "../head/head";
 export const Activites=()=>
 {
     const [load,sload]=useState(false);
-    const [file, sfile] = useState([]);
+    const [file, sfile] = useState('');
     const [img,simg]=useState([]);
-    const [theme,stheme]=useState([]);
+    const [theme,stheme]=useState();
     const [data,sdata]=useState([]);
-    const [desc,sdesc]=useState([]);
+    const [desc,sdesc]=useState();
     const inputref=useRef(null);
     let imgname;
     let name;
@@ -31,7 +31,13 @@ export const Activites=()=>
     const imgdb = getStorage(app);
     const Upload=async()=>
     {
-        sload(true)
+        if(!theme || !desc || typeof(file)==='string')
+        {
+            alert("")
+        }
+        else
+        {
+            sload(true)
         const imgref=ref(imgdb,`paiecell/Activities/${v4()}`);
         uploadBytes(imgref,file).then((val)=>
         {
@@ -56,6 +62,7 @@ export const Activites=()=>
                 })
             })
         })
+        }
         
     }
     const Deletephoto=async()=>
@@ -107,7 +114,7 @@ export const Activites=()=>
                     }}  for="photo"> <br/><br/><h5>select Photo</h5>
 
             </label><label>{file.name}</label>
-                <input type="file" id="photo" style={{display:'none'}} onChange={(e)=>sfile(e.target.files[0])}/>
+                <input type="file" id="photo" accept=".jpg, .jpeg, .png, .gif" style={{display:'none'}} onChange={(e)=>sfile(e.target.files[0])}/>
         </div>
         <div style={{justifyContent:'center',display:'flex',padding:'5% 0 5% 0'}}>
             <textarea style={{width:'30%',height:'20vh',border:'solid black'}} placeholder="Enter Description" onChange={(e)=>sdesc(e.target.value)} ref={inputref}/>

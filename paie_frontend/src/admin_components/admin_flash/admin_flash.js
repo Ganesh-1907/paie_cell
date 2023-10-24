@@ -1,26 +1,35 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Button from "react-bootstrap/esm/Button";
 import { Head } from "../head/head";
 function Admin_flash(){
 
-    const[flash,setflash]=useState([]);
+    const[flash,setflash]=useState();
     const[data,sdata]=useState([]);
-    const Flash=async()=>{
-        try
+    const inputRef=useRef();
+    const btnRef=useRef();
+    const Flash=async()=>
+    {
+        if(!flash)
         {
-            const responce = await axios.post("http://localhost:8000/flashnews/"+flash);
-        if(responce.data){
-            alert("flash news update successfully")
-            window.location.reload(2);
+            alert("")
         }
-        else{
-            alert("failed")
-        }
-        }
-        catch
+        else
         {
-            console.log("Ok cool");
+            try {
+                const responce = await axios.post("http://localhost:8000/flashnews/" + flash);
+                if (responce.data) {
+                    alert("flash news update successfully")
+                    window.location.reload(2);
+                }
+                else {
+                    alert("failed")
+                }
+            }
+            catch
+            {
+                console.log("Ok cool");
+            }
         }
     }
     useEffect(()=>
@@ -29,18 +38,26 @@ function Admin_flash(){
         .then((res)=>
         {
             sdata(res.data)
+            console.log(res.data)
         })
         .catch((e)=>console.log("ok cool"))
     })
     return(
         <>
         <Head/>
+        <h1>{data.flash}</h1>
             <h1 style={{textAlign:'center'}}>FLASH NEWS UPDATE</h1>
            <div style={{display:'flex',justifyContent:'space-evenly'}}>
-            <textarea type="text" style={{width:'50%'}} defaultValue={data.flash} placeholder="update flash news here....."  onChange={(e)=>setflash(e.target.value)}/>
+            {
+                data.map((val)=>
+                (
+                    <textarea type="text" style={{width:'50%'}} defaultValue={val.flash} placeholder="update flash news here....."
+            ref={inputRef} onKeyDown={(e)=>e.key='Enter'?btnRef.current.click():<b/>}  onChange={(e)=>setflash(e.target.value)}/>
+                ))
+            }
             <br/>
             <br/>
-            <Button onClick={Flash}>SUBMIT</Button>
+            <Button ref={btnRef} onClick={Flash}>SUBMIT</Button>
            </div>
             
         </>

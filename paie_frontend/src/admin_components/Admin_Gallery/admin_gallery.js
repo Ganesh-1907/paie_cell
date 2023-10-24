@@ -9,8 +9,8 @@ import { v4 } from 'uuid';
 export const AddGallery=()=>
 {
     const[data,sdata]=useState([]);
-    const[theme,stheme]=useState([]);
-    const[file,sfile]=useState([]);
+    const[theme,stheme]=useState();
+    const[file,sfile]=useState();
     const[load,sload]=useState(false);
     let val2;
 
@@ -27,6 +27,12 @@ export const AddGallery=()=>
     const imgdb = getStorage(app);
     const Upload=async()=>
     {
+       if(!theme||!file)
+       {
+        alert("")
+       }
+       else
+       {
         for(var i=0;i<file.length;i++)
         {
             sload(true)
@@ -46,6 +52,7 @@ export const AddGallery=()=>
                 })
             })
         }
+       }
     }
     const Deletephoto=async()=>
     {
@@ -103,9 +110,9 @@ export const AddGallery=()=>
                        
                     }}  for="photo"> <br/><br/><h5>select</h5>
 
-            </label><label>{file.name}</label>
+            </label>
                 <input type="file" accept=".jpg, .jpeg, .png, .gif" id="photo" style={{display:'none'}} multiple onChange={(e)=>sfile(e.target.files)}/>
-                <p>{sfile}</p>
+                {file?<p>{file.length} Files Selected</p>:<b/>}
         </div>
         <br/>
         <br/>

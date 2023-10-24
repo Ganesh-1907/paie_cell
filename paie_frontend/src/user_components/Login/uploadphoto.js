@@ -12,12 +12,12 @@ import Header from "../header/header";
 
 export const Uploadphoto=()=>
 {
-    const[mail,smail]=useState('');
+    const[mail,smail]=useState();
     const[data,sdata]=useState(null);
     const inputRef=useRef();
     const btnRef=useRef();
     const [load,sload]=useState(false);
-    const [file, sfile] = useState([]);
+    const [file, sfile] = useState('');
     const [photo,sphoto]=useState([]);
     const firebaseConfig = {
         apiKey: "AIzaSyBq36iHg3MK2o3acO9CEcK7FZkxaO3N490",
@@ -48,7 +48,13 @@ export const Uploadphoto=()=>
     }
     const Submit=async()=>
     {
-        sload(true)
+        if(!mail||typeof(file)==='string')
+        {
+            alert("")
+        }
+        else
+        {
+            sload(true)
         const imgref=ref(imgdb,`paiecell/Screenshorts/${v4()}`);
         uploadBytes(imgref,file).then((val)=>
         {
@@ -59,6 +65,7 @@ export const Uploadphoto=()=>
                 {
                     if(res.data)
                     {
+                        alert("Submited")
                         sload(false)
                     }
                 })
@@ -68,6 +75,7 @@ export const Uploadphoto=()=>
                 })
             })
         })
+        }
     }
     const Takephoto=async(e)=>
     {

@@ -33,6 +33,15 @@ app.post('/sslink',async(req,res)=>
     })
     .catch((e)=>console.log(e))
 })
+app.post('/updtpswd',async(req,res)=>
+{
+    await db.collection("Admin").findOneAndUpdate({Gmail:req.body.adminmail},{$set:{UpdatepasswordLink:req.body.sslink}})
+    .then((details)=>
+    {
+        res.json(details)
+    })
+    .catch((e)=>console.log(e))
+})
 app.post('/verifyadmin/:mail',async(req,res)=>
 {
     await db.collection("Admin").findOne({Gmail:req.params.mail})
@@ -56,7 +65,7 @@ app.post('/flashnews',async(req,res)=>{
 
 // ******************************************************Events************************************************//
 app.post('/admin-event/:day/:month/:year/:event/:details',async(req,res)=>{
-    const details=await db.collection("events-update").insertOne({
+    const details=await db.collection("Events").insertOne({
         day:req.params.day,
         month : req.params.month,
         year : req.params.year,
@@ -66,9 +75,19 @@ app.post('/admin-event/:day/:month/:year/:event/:details',async(req,res)=>{
     res.json(details)
 })
 
-app.post('/events/',async(req,res)=>{
-    const details=await db.collection("events-update").find({}).sort({_id : -1}).toArray()
+app.post('/events/',async(req,res)=>
+{
+    const details=await db.collection("Events").find().toArray()
     res.json(details);
+})
+app.post('/delete-event/:event',async(req,res)=>
+{
+    await db.collection("Events").deleteOne({event:req.params.event})
+    .then((details)=>
+    {
+        res.json(details)
+    })
+    .catch((e)=>console.log(e));
 })
 
 
@@ -243,7 +262,7 @@ app.post('/registerdata',async(req,res)=>
     })
     .catch((e)=>console.log(e));
 })
-app.post('/cnfrmregtr/:mail',async(req,res)=>
+app.post('/cnfrmregt/:mail',async(req,res)=>
 {
     await db.collection("RegisterData").findOneAndUpdate({Gmail:req.params.mail},{$set:{Confirm:true}})
     .then((details)=>
@@ -263,13 +282,68 @@ app.post('/rmvrgtr/:mail',async(req,res)=>
 })
 app.post('/updatepassword/:mail/:pass',async(req,res)=>
 {
-    await db.collection("RegisterData").findOneAndUpdate({Gmail:req.params.mail},{$set:{Password:req.params.pass}})
-    .then((details)=>
+    await db.collection("RegisterData").findOne({Gmail:req.params.mail})
+    .then(async(details)=>
     {
-        res.json(details)
+        if(details.Confirm)
+        {
+            await db.collection("RegisterData").findOneAndUpdate({ Gmail: req.params.mail }, { $set: { Password: req.params.pass } })
+                .then((details1) => {
+                    res.json(details1)
+                })
+                .catch((e) => console.log(e))
+        }
+        else
+        {
+           res.json(details)
+        }
     })
     .catch((e)=>console.log(e))
 })
+app.post('/finilizelist/:name',async(req,res)=>
+{
+    await db.collection("RegisterData").find({Confirm:true}).toArray()
+    .then((details)=>
+    {
+        if(details)
+        {
+            details.forEach(element =>
+            {
+                 db.collection("FinalList").findOne({ Date: req.params.name })
+                    .then(async (details1) =>
+                    {
+                        if (details1)
+                        {
+                            await db.collection("FinalList").findOne({List:element})
+                            .then((details2)=>
+                            {
+                                if(!details2)
+                                {
+                                    db.collection("FinalList").findOneAndUpdate({ Date: req.params.name }, { $push: { List: element } })
+                                    .then((details) => {
+                                        res.json(details)
+                                    })
+                                    .catch((e) => {
+                                        console.log(e);
+                                    })
+                                }
+                                else
+                                {
+                                    console.log("OK")
+                                }
+                            })
+                        }
+                        else {
+                            await db.collection("FinalList").insertOne({ Date: req.params.name, List: [element] })
+                        }
+                    })
+            });
+            // 
+            // await db.collection("FinalList").findOneAndUpdate({Name:req.params.name},{$set:{List:details}})
+            // await db.collection("FinalList").insertMany([`${Name}:${details}`])
+        }
+    })
+})  
 
 connectToDB(()=>{
     app.listen(8000,()=>{

@@ -6,7 +6,12 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './navbar.css';
 
-function NavBar() {
+function NavBar()
+{
+  const Logout=()=>
+  {
+    sessionStorage.removeItem("studentmail");
+  }
   return (
     <>
     
@@ -19,7 +24,10 @@ function NavBar() {
           <Nav className="me-auto">
             <Nav.Link href="/" style={{ color: 'white' }}>Home</Nav.Link>
             <NavDropdown id="nav-dropdown-light-example" title="About"  >
-              <NavDropdown.Item href='login'>Login</NavDropdown.Item>
+              {
+                sessionStorage.studentmail?<NavDropdown.Item href='login' onClick={Logout}>Logout</NavDropdown.Item>:
+                <NavDropdown.Item href='login'>Login</NavDropdown.Item>
+              }
               <NavDropdown.Item href="aboutsrkr">SRKR</NavDropdown.Item>
               <NavDropdown.Item href="aboutpaiecell">  PAIE CELL</NavDropdown.Item>
               <NavDropdown.Item href="aboutaol">ART OF LIVING</NavDropdown.Item>
