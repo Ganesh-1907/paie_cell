@@ -329,7 +329,7 @@ app.post('/finilizelist/:name',async(req,res)=>
                                 }
                                 else
                                 {
-                                    console.log("OK")
+                                    res.json(details)
                                 }
                             })
                         }
@@ -338,10 +338,7 @@ app.post('/finilizelist/:name',async(req,res)=>
                         }
                     })
             });
-            // 
-            // await db.collection("FinalList").findOneAndUpdate({Name:req.params.name},{$set:{List:details}})
-            // await db.collection("FinalList").insertMany([`${Name}:${details}`])
-        }
+            }
     })
 })  
 
