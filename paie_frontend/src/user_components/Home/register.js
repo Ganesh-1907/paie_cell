@@ -3,11 +3,15 @@ import Form from 'react-bootstrap/Form';
 import { Head } from "../../admin_components/head/head";
 import Button from "react-bootstrap/esm/Button";
 import axios from "axios";
+import Alert from "react-bootstrap/Alert";
+
 export const Adminregister=()=>
 {
     const[mail,smail]=useState('');
     const[password,spassword]=useState('');
     const[cpassword,scpassword]=useState('');
+    const [successMessage, setSuccessMessage] = useState("");
+    const [errorMessage, setErrorMessage] = useState("");
     const Register=async()=>
     {
         await axios.post("http://localhost:8000/verifyadmin/"+mail)
@@ -15,7 +19,8 @@ export const Adminregister=()=>
         {
             if(res.data)
             {
-                alert("Mail Already Existed")
+                // alert("Mail Already Existed")
+                setErrorMessage("Email already existed!");
             }
             else
             {
@@ -24,18 +29,21 @@ export const Adminregister=()=>
                     await axios.post("http://localhost:8000/paieadmin/" + mail + "/" + password)
                     .then((res1) => {
                         if (res1.data) {
-                            alert("Sucessfully Createad Admin");
+                            // alert("Sucessfully Createad Admin");
+                            setSuccessMessage("Admin created successfully!");
                             window.location="admin";
                         }
                         else {
-                            alert("Try again");
+                            // alert("Try again");
+                            setErrorMessage("Something went wrong! Try Again.");
                         }
                     })
                     .catch((e) => console.log(e));
                 }
                 else
                 {
-                    alert("Passwords are not matched");
+                    // alert("Passwords are not matched");
+                    setErrorMessage("Password and Confirm Password fields do not match!");
                 }
             }
         })
@@ -44,6 +52,29 @@ export const Adminregister=()=>
     return(
         <>
         <Head/>
+        <br />
+        <div style={{ display: "flex", justifyContent: "center" }}>
+          <div style={{ maxWidth: "720px", width: "100%" }}>
+            <Alert
+              variant="success"
+              show={successMessage !== ""}
+              onClose={() => setSuccessMessage("")}
+              dismissible
+              style={{ margin: "0 auto" }}
+            >
+              {successMessage}
+            </Alert>
+            <Alert
+              variant="danger"
+              show={errorMessage !== ""}
+              onClose={() => setErrorMessage("")}
+              dismissible
+              style={{ margin: "0 auto" }}
+            >
+              {errorMessage}
+            </Alert>
+          </div>
+        </div>
             <div style={{marginTop:'7%',display:'grid',justifyContent:'center'}}>
             <Form>
                 <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">

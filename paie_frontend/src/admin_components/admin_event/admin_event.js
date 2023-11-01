@@ -3,6 +3,7 @@ import React, { useEffect, useRef, useState } from "react";
 import Button from "react-bootstrap/esm/Button";
 import { Head } from "../head/head";
 import Table from "react-bootstrap/esm/Table";
+import Alert from "react-bootstrap/Alert";
     
 function Admin_event(){
 
@@ -14,21 +15,26 @@ function Admin_event(){
     const inputRef=useRef();
     const btnRef=useRef();
     const[data,sdata]=useState([])
+    const [successMessage, setSuccessMessage] = useState("");
+    const [errorMessage, setErrorMessage] = useState("");
     console.log(!day)
     const Event = async () =>
     {
         if(!day || !month || !year || !event || !details)    
         {
-            alert("")
+            // alert("")
+            setErrorMessage("All fields are required.");
         }
         else
         {
             const responce = await axios.post("http://localhost:8000/admin-event/" + day + "/" + month + "/" + year + "/" + event + "/" + details);
             if (responce.data) {
-                alert("update successfully")
+                // alert("update successfully")
+                setSuccessMessage("Update successful");
             }
             else {
-                alert("failed")
+                // alert("failed")
+                setErrorMessage("Failed to update");
             }
         }
     }
@@ -39,11 +45,13 @@ function Admin_event(){
         {
             if(res.data)
             {
-                alert("deleted");
+                // alert("deleted");
+                setSuccessMessage("Event deleted")
             }
             else
             {
-                alert("Try again");
+                // alert("Try again");
+                setErrorMessage("Deletion failed. Try again.");
             }
         })
         .catch((e)=>console.log(e));
@@ -60,6 +68,16 @@ function Admin_event(){
 return(
     <>
     <Head/>
+    <div style={{ display: 'flex', justifyContent: 'center' }}>
+        <div style={{ maxWidth: '720px', width: '100%' }}>
+          <Alert variant="success" show={successMessage !== ''} onClose={() => setSuccessMessage('')} dismissible style={{ margin: '0 auto' }}>
+            {successMessage}
+          </Alert>
+          <Alert variant="danger" show={errorMessage !== ''} onClose={() => setErrorMessage('')} dismissible style={{ margin: '0 auto' }}>
+            {errorMessage}
+          </Alert>
+        </div>
+      </div>
         <div>
             <Table bordered responsive hover variant="lightblue">
                 <thead>
@@ -87,6 +105,7 @@ return(
                 </tbody>
             </Table>
         </div>
+     
      <h1 style={{textAlign:'center'}}>UPDATE EVENTS </h1>
             <div  style={{display:'grid',justifyContent:'center'}}>
             <input type="number" pattern="\d+" name="event-day" placeholder="event-day...." onChange={(e)=>setday(e.target.value)}/>

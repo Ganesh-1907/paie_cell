@@ -7,6 +7,8 @@ import { v4 } from 'uuid';
 import Header from "../../user_components/header/header";
 import image from "../addingphotos/imageupload.jpeg";
 import { Head } from "../head/head";
+import Alert from "react-bootstrap/Alert";
+
 export const Activites=()=>
 {
     const [load,sload]=useState(false);
@@ -15,6 +17,8 @@ export const Activites=()=>
     const [theme,stheme]=useState();
     const [data,sdata]=useState([]);
     const [desc,sdesc]=useState();
+    const [successMessage, setSuccessMessage] = useState("");
+    const [errorMessage, setErrorMessage] = useState("");
     const inputref=useRef(null);
     let imgname;
     let name;
@@ -33,7 +37,8 @@ export const Activites=()=>
     {
         if(!theme || !desc || typeof(file)==='string')
         {
-            alert("")
+            // alert("")
+            setErrorMessage("All fields are required");
         }
         else
         {
@@ -72,7 +77,8 @@ export const Activites=()=>
         deleteObject(desertRef) && axios.post("http://localhost:8000/delactiphoto/"+img)
         .then(()=>
         {
-            alert("Deleted");
+            // alert("Deleted");
+            setSuccessMessage("Activity deleted successfully");
         })
         .catch((e)=>
         {
@@ -90,6 +96,7 @@ export const Activites=()=>
     return(
         <>
         <Head/>
+       
         <h1 style={{textAlign:'center'}}>Activites Photos</h1>
         <div >
            {
@@ -102,6 +109,16 @@ export const Activites=()=>
             ))
            }
         </div>
+        <div style={{ display: 'flex', justifyContent: 'center' }}>
+        <div style={{ maxWidth: '720px', width: '100%' }}>
+          <Alert variant="success" show={successMessage !== ''} onClose={() => setSuccessMessage('')} dismissible style={{ margin: '0 auto' }}>
+            {successMessage}
+          </Alert>
+          <Alert variant="danger" show={errorMessage !== ''} onClose={() => setErrorMessage('')} dismissible style={{ margin: '0 auto' }}>
+            {errorMessage}
+          </Alert>
+        </div>
+      </div>
         <br/><br/>
         <div style={{display:'flex',justifyContent:'center'}}>
             <input value={theme} style={{width:'20%',height:'5vh',border:'solid blue'}} placeholder="Enter photo Theme" onChange={(e)=>{stheme(e.target.value)}} />

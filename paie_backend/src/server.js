@@ -300,7 +300,7 @@ app.post('/updatepassword/:mail/:pass',async(req,res)=>
     })
     .catch((e)=>console.log(e))
 })
-app.post('/finilizelist/:name',async(req,res)=>
+app.post('/finilizelis/:name',async(req,res)=>
 {
     await db.collection("RegisterData").find({Confirm:true}).toArray()
     .then((details)=>
@@ -341,6 +341,23 @@ app.post('/finilizelist/:name',async(req,res)=>
             }
     })
 })  
+app.post('/finilizelist/:ok',async(req,res)=>
+{
+    await db.collection("FinalList").find().toArray()
+    .then((details)=>
+    {
+        console.log("Hello")
+        
+        details.map((val)=>
+        (
+            
+                val.List.map((val2)=>
+                {console.log(details.Date)
+                    console.log(val2)
+                })
+        ))
+    })
+})
 
 connectToDB(()=>{
     app.listen(8000,()=>{

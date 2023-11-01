@@ -3,11 +3,15 @@ import React, { useState } from "react";
 import Form from 'react-bootstrap/Form';
 import Button from "react-bootstrap/esm/Button";
 import Header from "../header/header";
+import Alert from "react-bootstrap/Alert";
+
 export const Update=()=>
 {
     const[mail,smail]=useState('');
     const[password,spassword]=useState('');
     const[cpassword,scpassword]=useState('');
+    const [successMessage, setSuccessMessage] = useState("");
+    const [errorMessage, setErrorMessage] = useState("");
     const Update=async()=>
     {
         await axios.post("http://localhost:8000/verify/"+mail)
@@ -22,24 +26,28 @@ export const Update=()=>
                     {
                         if (res.data.Confirm || res1.data.value)
                         {
-                            alert("Sucessfully Updated");
+                            // alert("Sucessfully Updated");
+                            setSuccessMessage("Password updated successfully!");
                             window.location="/";
                         }
                         else
                         {
-                            alert("Please Pay Amount")
+                            // alert("Please Pay Amount")
+                            setErrorMessage("You need to pay amount first.");
                         }
                     })
                     .catch((e) => console.log(e));
                 }
                 else
                 {
-                    alert("Passwords are not matched");
+                    // alert("Passwords are not matched");
+                    setErrorMessage("Passwords do not match.")
                 }
             }
             else
             {
-                alert("Mail Not Exist");
+                // alert("Mail Not Exist");
+                setErrorMessage("Email does not exist!")
             }
         })
         .catch((e)=>console.log(e))
@@ -47,6 +55,29 @@ export const Update=()=>
     return(
         <>
         <Header/>
+        <br/>
+        <div style={{ display: "flex", justifyContent: "center" }}>
+          <div style={{ maxWidth: "720px", width: "100%" }}>
+            <Alert
+              variant="success"
+              show={successMessage !== ""}
+              onClose={() => setSuccessMessage("")}
+              dismissible
+              style={{ margin: "0 auto" }}
+            >
+              {successMessage}
+            </Alert>
+            <Alert
+              variant="danger"
+              show={errorMessage !== ""}
+              onClose={() => setErrorMessage("")}
+              dismissible
+              style={{ margin: "0 auto" }}
+            >
+              {errorMessage}
+            </Alert>
+          </div>
+        </div>
         <div style={{marginTop:'7%',display:'grid',justifyContent:'center'}}>
             <Form>
                 <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">

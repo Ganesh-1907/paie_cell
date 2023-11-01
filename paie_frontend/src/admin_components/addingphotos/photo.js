@@ -7,6 +7,8 @@ import { v4 } from 'uuid';
 import image from "../addingphotos/imageupload.jpeg";
 import "../admin.css";
 import { Head } from '../head/head';
+import Alert from "react-bootstrap/Alert";
+
 export const Photos=()=>
 {
     const [load,sload]=useState(false);
@@ -14,6 +16,8 @@ export const Photos=()=>
     const [img,simg]=useState('');
     const [theme,stheme]=useState();
     const [data,sdata]=useState([]);
+    const [successMessage, setSuccessMessage] = useState("");
+    const [errorMessage, setErrorMessage] = useState("");
     let imgname;
     let name;
     const firebaseConfig = {
@@ -32,7 +36,8 @@ export const Photos=()=>
     {
         if(!theme || typeof(file)==='string')
         {
-            alert("")
+            // alert("")
+            setErrorMessage("All fields are required")
         }
         else
         {
@@ -72,7 +77,8 @@ export const Photos=()=>
         deleteObject(desertRef) && axios.post("http://localhost:8000/delphoto/"+img)
         .then(()=>
         {
-            alert("Deleted");
+            // alert("Deleted");
+            setSuccessMessage("Coursel deleted succesfully")
         })
         .catch((e)=>
         {
@@ -90,6 +96,16 @@ export const Photos=()=>
     return(
         <>
         <Head/>
+        <div style={{ display: 'flex', justifyContent: 'center' }}>
+        <div style={{ maxWidth: '720px', width: '100%' }}>
+          <Alert variant="success" show={successMessage !== ''} onClose={() => setSuccessMessage('')} dismissible style={{ margin: '0 auto' }}>
+            {successMessage}
+          </Alert>
+          <Alert variant="danger" show={errorMessage !== ''} onClose={() => setErrorMessage('')} dismissible style={{ margin: '0 auto' }}>
+            {errorMessage}
+          </Alert>
+        </div>
+      </div>
         <h1 style={{textAlign:'center'}}>Crousel Photos</h1>
         <div >
            {

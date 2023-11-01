@@ -3,12 +3,16 @@ import React, { useEffect, useState } from "react";
 import Table from 'react-bootstrap/Table';
 import Button from "react-bootstrap/esm/Button";
 import { Head } from "../head/head";
+import Alert from "react-bootstrap/Alert";
+
 export const Confirmregister=()=>
 {
     const[data,sdata]=useState([]);
     const[data1,sdata1]=useState([]);
     const[photo,sphoto]=useState([])
     const [select,sselect]=useState([]);
+    const [successMessage, setSuccessMessage] = useState("");
+    const [errorMessage, setErrorMessage] = useState("");
     const Openphoto=async(photo)=>
     {
         document.getElementById('screenshort').style.display="block"
@@ -23,7 +27,8 @@ export const Confirmregister=()=>
         .then((res)=>
         {
             if (res.data) {
-                alert("Confirmed");
+                // alert("Confirmed");
+                setSuccessMessage("Confirmed");
                 let ebody = `
         <p>This <b>Mail</b> from <h1>PAIE CELL</h1></p>
         <p>
@@ -46,7 +51,8 @@ export const Confirmregister=()=>
                 )
             }
             else {
-                alert("Try again");
+                // alert("Try again");
+                setErrorMessage("Try Again");
             }
         })
         .catch((e)=>console.log(e))
@@ -58,11 +64,13 @@ export const Confirmregister=()=>
         {
             if(res.data)
             {
-                alert("Removed");
+                // alert("Removed");
+                setSuccessMessage("Removed");
             }
             else
             {
-                alert("Try again");
+                // alert("Try again");
+                setErrorMessage("Try Again");
             }
         })
         .catch((e)=>console.log(e))
@@ -87,6 +95,30 @@ export const Confirmregister=()=>
     return(
         <>
         <Head/>
+        <br/>
+        <div style={{ display: "flex", justifyContent: "center" }}>
+          <div style={{ maxWidth: "720px", width: "100%" }}>
+            <Alert
+              variant="success"
+              show={successMessage !== ""}
+              onClose={() => setSuccessMessage("")}
+              dismissible
+              style={{ margin: "0 auto" }}
+            >
+              {successMessage}
+            </Alert>
+            <Alert
+              variant="danger"
+              show={errorMessage !== ""}
+              onClose={() => setErrorMessage("")}
+              dismissible
+              style={{ margin: "0 auto" }}
+            >
+              {errorMessage}
+            </Alert>
+          </div>
+        </div>
+        <br/>
         <div className="openphoto" id="screenshort">
             <Button style={{backgroundColor:'orangered',position:'absolute'}} onClick={Close}>X</Button>
             <img src={photo} width={"100%"} height={"100%"}/>

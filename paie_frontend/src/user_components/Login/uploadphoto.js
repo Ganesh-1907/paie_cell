@@ -9,6 +9,7 @@ import InputGroup from 'react-bootstrap/InputGroup';
 import { v4 } from 'uuid';
 import image from "../../admin_components/addingphotos/imageupload.jpeg";
 import Header from "../header/header";
+import Alert from "react-bootstrap/Alert";
 
 export const Uploadphoto=()=>
 {
@@ -19,6 +20,8 @@ export const Uploadphoto=()=>
     const [load,sload]=useState(false);
     const [file, sfile] = useState('');
     const [photo,sphoto]=useState([]);
+    const [successMessage, setSuccessMessage] = useState("");
+    const [errorMessage, setErrorMessage] = useState("");
     const firebaseConfig = {
         apiKey: "AIzaSyBq36iHg3MK2o3acO9CEcK7FZkxaO3N490",
         authDomain: "paie-cell.firebaseapp.com",
@@ -41,7 +44,8 @@ export const Uploadphoto=()=>
             }
             else
             {
-                alert("Try again");
+                // alert("Try again");
+                setErrorMessage("Try again")
             }
         })
         .catch((e)=>console.log(e))
@@ -50,7 +54,8 @@ export const Uploadphoto=()=>
     {
         if(!mail||typeof(file)==='string')
         {
-            alert("")
+            // alert("")
+            setErrorMessage("All fields are required")
         }
         else
         {
@@ -65,7 +70,8 @@ export const Uploadphoto=()=>
                 {
                     if(res.data)
                     {
-                        alert("Submited")
+                        // alert("Submited")
+                        setSuccessMessage("Submitted Successfully")
                         sload(false)
                     }
                 })
@@ -95,7 +101,18 @@ export const Uploadphoto=()=>
     console.log(photo)
     return(
         <>
-            <Header />
+            <Header /><br/>
+            <div style={{ display: 'flex', justifyContent: 'center' }}>
+        <div style={{ maxWidth: '720px', width: '100%' }}>
+          <Alert variant="success" show={successMessage !== ''} onClose={() => setSuccessMessage('')} dismissible style={{ margin: '0 auto' }}>
+            {successMessage}
+          </Alert>
+          <Alert variant="danger" show={errorMessage !== ''} onClose={() => setErrorMessage('')} dismissible style={{ margin: '0 auto' }}>
+            {errorMessage}
+          </Alert>
+        </div>
+      </div>
+      <br/>
             <Card style={{ width: '60%' ,marginLeft:'20%'}}>
                 <label for="photo" style={{ height: '40vh',backgroundImage:`url(${file.name?photo:image})`,backgroundSize:'100% 40vh'}}>
                 <p style={{color:'green'}}>Upload your payment Screen short</p><p style={{color:'blue'}}>Click Here.....</p>
