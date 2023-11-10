@@ -5,7 +5,7 @@ import Header from "../header/header";
 const Events= () => {
     const[data,setData]=useState([]);
     useEffect(()=>{
-        axios.post('http://localhost:8000/events')
+        axios.post('https://paiecell.onrender.com/events')
         .then((responce)=>{   
             setData(responce.data.sort());
         })

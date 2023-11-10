@@ -30,7 +30,7 @@ export const Register = () => {
     } else {
       await axios
         .post(
-          "http://localhost:8000/register/" +
+          "https://paiecell.onrender.com/register/" +
             name +
             "/" +
             gmail +
@@ -79,7 +79,7 @@ export const Register = () => {
   };
   const Emailverify = async () => {
     if (gmail) {
-      await axios.post("http://localhost:8000/verify/" + gmail).then((res1) => {
+      await axios.post("https://paiecell.onrender.com/verify/" + gmail).then((res1) => {
         if (res1.data) {
           // alert("");
           setErrorMessage("This email is already registered. Please use a different email or sign in.");
@@ -123,7 +123,7 @@ export const Register = () => {
   };
   useEffect(() => {
     axios
-      .post("http://localhost:8000/verifyadmin/" + sessionStorage.adminmail)
+      .post("https://paiecell.onrender.com/verifyadmin/" + sessionStorage.adminmail)
       .then((res) => {
         if (res.data) {
           sdata(res.data);

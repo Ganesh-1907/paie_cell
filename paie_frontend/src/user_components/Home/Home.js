@@ -21,7 +21,7 @@ function Home()
     const Login=async()=>
     {
         mail===''?alert("mail required"):password===''?alert(""):
-        await axios.post("http://localhost:8000/verify/"+mail)
+        await axios.post("https://paiecell.onrender.com/verify/"+mail)
         .then((res)=>
         {
             if(res.data)

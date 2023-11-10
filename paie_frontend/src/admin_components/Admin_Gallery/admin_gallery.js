@@ -45,7 +45,7 @@ export const AddGallery=()=>
             uploadBytes(imgref, file[i]).then((val) => {
                 getDownloadURL(val.ref).then(async (url) => {
                     const name=imgref.name
-                    await axios.post("http://localhost:8000/addgallery", { theme,name, url })
+                    await axios.post("https://paiecell.onrender.com/addgallery", { theme,name, url })
                         .then((res) => {
                             if (res.data) {
                                 sload(false)
@@ -63,7 +63,7 @@ export const AddGallery=()=>
     {
         const storage = getStorage();
         const desertRef=ref(storage,`paiecell/Gallery/${file.val.Theme}/${file.val1.Name}`)
-        deleteObject(desertRef) && axios.post("http://localhost:8000/deletegalleryphoto",{file})
+        deleteObject(desertRef) && axios.post("https://paiecell.onrender.com/deletegalleryphoto",{file})
         .then((res)=>
         {
             if(res.data)
@@ -84,7 +84,7 @@ export const AddGallery=()=>
     }
     useEffect(()=>
     {
-        axios.post("http://localhost:8000/showgallery")
+        axios.post("https://paiecell.onrender.com/showgallery")
         .then((res)=>
         {
             sdata(res.data)

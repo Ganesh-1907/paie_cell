@@ -16,7 +16,7 @@ export const FinalList=()=>
     // const date2=date(date1)
     useEffect(()=>
     {
-        axios.post("http://localhost:8000/registerdata")
+        axios.post("https://paiecell.onrender.com/registerdata")
         .then((res)=>
         {
             sdata(res.data)
@@ -27,7 +27,7 @@ export const FinalList=()=>
     {
         console.log(date.toDateString())
         sload(true)
-        axios.post("http://localhost:8000/finilizelist/"+date.toDateString())
+        axios.post("https://paiecell.onrender.com/finilizelist/"+date.toDateString())
         .then((res)=>
         {
             if(res.data)

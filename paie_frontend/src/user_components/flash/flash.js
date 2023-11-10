@@ -7,7 +7,7 @@ const Flash= () => {
     const[flash,setflash]=useState([]);
 
     useEffect(()=>{
-        axios.post('http://localhost:8000/flashnews')
+        axios.post('https://paiecell.onrender.com/flashnews')
         .then((responce)=>
         {   
             setflash(responce.data);

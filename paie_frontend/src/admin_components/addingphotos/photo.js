@@ -50,7 +50,7 @@ export const Photos=()=>
             {
                 imgname=theme
                 name=imgref.name
-                await axios.post("http://localhost:8000/addphotos",{imgname,name,url})
+                await axios.post("https://paiecell.onrender.com/addphotos",{imgname,name,url})
                 .then((res)=>
                 {
                     if(res.data)
@@ -74,7 +74,7 @@ export const Photos=()=>
     {
         const storage = getStorage();
         const desertRef=ref(storage,`paiecell/Coursel//${img}`)
-        deleteObject(desertRef) && axios.post("http://localhost:8000/delphoto/"+img)
+        deleteObject(desertRef) && axios.post("https://paiecell.onrender.com/delphoto/"+img)
         .then(()=>
         {
             // alert("Deleted");
@@ -87,7 +87,7 @@ export const Photos=()=>
     }
     useEffect(()=>
     {
-        axios.post("http://localhost:8000/photos")
+        axios.post("https://paiecell.onrender.com/photos")
         .then((res)=>
         {
             sdata(res.data)

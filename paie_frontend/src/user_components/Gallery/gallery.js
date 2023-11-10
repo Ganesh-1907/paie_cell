@@ -8,7 +8,7 @@ export const Gallery=()=>
     const[photo,sphoto]=useState([])
     useEffect(()=>
     {
-        axios.post("http://localhost:8000/showgallery")
+        axios.post("https://paiecell.onrender.com/showgallery")
         .then((res)=>
         {
             sdata(res.data)

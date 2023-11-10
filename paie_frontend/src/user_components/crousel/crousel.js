@@ -43,7 +43,7 @@ function Crousel(){
       };
       useEffect(()=>
       {
-          axios.post("http://localhost:8000/photos")
+          axios.post("https://paiecell.onrender.com/photos")
           .then((res)=>
           {
               sdata(res.data)

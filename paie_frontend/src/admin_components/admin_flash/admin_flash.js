@@ -22,7 +22,7 @@ function Admin_flash(){
         else
         {
             try {
-                const responce = await axios.post("http://localhost:8000/flashnews/" + flash);
+                const responce = await axios.post("https://paiecell.onrender.com/flashnews/" + flash);
                 if (responce.data) {
                     // alert("flash news update successfully")
                     setSuccessMessage("Flash news update successfully")
@@ -41,7 +41,7 @@ function Admin_flash(){
     }
     useEffect(()=>
     {
-        axios.post("http://localhost:8000/flashnews")
+        axios.post("https://paiecell.onrender.com/flashnews")
         .then((res)=>
         {
             sdata(res.data)

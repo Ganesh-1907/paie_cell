@@ -14,7 +14,7 @@ export const Adminregister=()=>
     const [errorMessage, setErrorMessage] = useState("");
     const Register=async()=>
     {
-        await axios.post("http://localhost:8000/verifyadmin/"+mail)
+        await axios.post("https://paiecell.onrender.com/verifyadmin/"+mail)
         .then(async(res)=>
         {
             if(res.data)
@@ -26,7 +26,7 @@ export const Adminregister=()=>
             {
                 if(password===cpassword)
                 {
-                    await axios.post("http://localhost:8000/paieadmin/" + mail + "/" + password)
+                    await axios.post("https://paiecell.onrender.com/paieadmin/" + mail + "/" + password)
                     .then((res1) => {
                         if (res1.data) {
                             // alert("Sucessfully Createad Admin");

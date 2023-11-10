@@ -35,7 +35,7 @@ export const Uploadphoto=()=>
     const imgdb = getStorage(app);
     const Verify=async()=>
     {
-        await axios.post("http://localhost:8000/verify/"+mail)
+        await axios.post("https://paiecell.onrender.com/verify/"+mail)
         .then((res)=>
         {
             if(res.data)
@@ -65,7 +65,7 @@ export const Uploadphoto=()=>
         {
             getDownloadURL(val.ref).then(async(url)=>
             {
-                await axios.post("http://localhost:8000/uploadscrnsrt",{mail,url})
+                await axios.post("https://paiecell.onrender.com/uploadscrnsrt",{mail,url})
                 .then((res)=>
                 {
                     if(res.data)

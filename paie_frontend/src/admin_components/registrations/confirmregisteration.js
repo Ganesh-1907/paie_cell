@@ -23,7 +23,7 @@ export const Confirmregister=()=>
     }
     const Confirm=async()=>
     {
-        await axios.post("http://localhost:8000/cnfrmregt/"+select.Gmail)
+        await axios.post("https://paiecell.onrender.com/cnfrmregt/"+select.Gmail)
         .then((res)=>
         {
             if (res.data) {
@@ -59,7 +59,7 @@ export const Confirmregister=()=>
     }
     const Remove=async()=>
     {
-        await axios.post("http://localhost:8000/rmvrgtr/"+select.Gmail)
+        await axios.post("https://paiecell.onrender.com/rmvrgtr/"+select.Gmail)
         .then((res)=>
         {
             if(res.data)
@@ -77,13 +77,13 @@ export const Confirmregister=()=>
     }
     useEffect(()=>
     {
-        axios.post("http://localhost:8000/registerdata")
+        axios.post("https://paiecell.onrender.com/registerdata")
         .then((res)=>
         {
             sdata(res.data)
         })
         .catch((e)=>console.log(e));
-        axios.post("http://localhost:8000/verifyadmin/" + sessionStorage.adminmail)
+        axios.post("https://paiecell.onrender.com/verifyadmin/" + sessionStorage.adminmail)
         .then((res)=>
         {
             if(res.data)

@@ -45,7 +45,7 @@ function Activity()
       };
       useEffect(()=>
     {
-        axios.post("http://localhost:8000/actiphotos")
+        axios.post("https://paiecell.onrender.com/actiphotos")
         .then((res)=>
         {
             sdata(res.data)

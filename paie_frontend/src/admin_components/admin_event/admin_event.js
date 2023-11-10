@@ -27,7 +27,7 @@ function Admin_event(){
         }
         else
         {
-            const responce = await axios.post("http://localhost:8000/admin-event/" + day + "/" + month + "/" + year + "/" + event + "/" + details);
+            const responce = await axios.post("https://paiecell.onrender.com/admin-event/" + day + "/" + month + "/" + year + "/" + event + "/" + details);
             if (responce.data) {
                 // alert("update successfully")
                 setSuccessMessage("Update successful");
@@ -40,7 +40,7 @@ function Admin_event(){
     }
     const Deletevent=async()=>
     {
-        await axios.post("http://localhost:8000/delete-event/"+event)
+        await axios.post("https://paiecell.onrender.com/delete-event/"+event)
         .then((res)=>
         {
             if(res.data)
@@ -58,7 +58,7 @@ function Admin_event(){
     }
     useEffect(()=>
     {
-        axios.post("http://localhost:8000/events/")
+        axios.post("https://paiecell.onrender.com/events/")
         .then((res)=>
         {
             sdata(res.data)

@@ -24,7 +24,7 @@ function Admin()
         }
         else
         {
-            await axios.post("http://localhost:8000/verifyadmin/"+mail)
+            await axios.post("https://paiecell.onrender.com/verifyadmin/"+mail)
         .then((res)=>
         {
             if(res.data)
@@ -55,7 +55,7 @@ function Admin()
         }
         else
         {
-            await axios.post("http://localhost:8000/aollink", { adminmail, aollink })
+            await axios.post("https://paiecell.onrender.com/aollink", { adminmail, aollink })
                 .then((res) => {
                     if (res.data) {
                         alert("Link Added")
@@ -76,7 +76,7 @@ function Admin()
         }
         else
         {
-            await axios.post("http://localhost:8000/sslink", { adminmail, sslink })
+            await axios.post("https://paiecell.onrender.com/sslink", { adminmail, sslink })
                 .then((res) => {
                     if (res.data) {
                         alert("Link Added")
@@ -97,7 +97,7 @@ function Admin()
         }
         else
         {
-            await axios.post("http://localhost:8000/updtpswd", { adminmail, sslink })
+            await axios.post("https://paiecell.onrender.com/updtpswd", { adminmail, sslink })
                 .then((res) => {
                     if (res.data) {
                         alert("Link Added")

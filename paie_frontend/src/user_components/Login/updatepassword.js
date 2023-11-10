@@ -14,14 +14,14 @@ export const Update=()=>
     const [errorMessage, setErrorMessage] = useState("");
     const Update=async()=>
     {
-        await axios.post("http://localhost:8000/verify/"+mail)
+        await axios.post("https://paiecell.onrender.com/verify/"+mail)
         .then(async(res)=>
         {
             if(res.data)
             {
                 if(password===cpassword)
                 {
-                    await axios.post("http://localhost:8000/updatepassword/" + mail + "/" + password)
+                    await axios.post("https://paiecell.onrender.com/updatepassword/" + mail + "/" + password)
                     .then((res1) => 
                     {
                         if (res.data.Confirm || res1.data.value)

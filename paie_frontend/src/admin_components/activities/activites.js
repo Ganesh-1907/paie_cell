@@ -50,7 +50,7 @@ export const Activites=()=>
             getDownloadURL(val.ref).then(async(url)=>
             {
                 name=imgref.name
-                await axios.post("http://localhost:8000/addactivity",{theme,desc,name,url})
+                await axios.post("https://paiecell.onrender.com/addactivity",{theme,desc,name,url})
                 .then((res)=>
                 {
                     if(res.data)
@@ -74,7 +74,7 @@ export const Activites=()=>
     {
         const storage = getStorage();
         const desertRef=ref(storage,`paiecell/Activities/${img}`)
-        deleteObject(desertRef) && axios.post("http://localhost:8000/delactiphoto/"+img)
+        deleteObject(desertRef) && axios.post("https://paiecell.onrender.com/delactiphoto/"+img)
         .then(()=>
         {
             // alert("Deleted");
@@ -87,7 +87,7 @@ export const Activites=()=>
     }
     useEffect(()=>
     {
-        axios.post("http://localhost:8000/actiphotos")
+        axios.post("https://paiecell.onrender.com/actiphotos")
         .then((res)=>
         {
             sdata(res.data)
